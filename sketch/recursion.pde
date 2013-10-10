@@ -4,34 +4,34 @@ float a = 1;
 void draw() {
   background(0);
   a++;
-  // Convert it to radians
+  // Convertion en radians
   theta = radians(a);
-  // Start the tree from the bottom of the screen
+  // Commence l'arbre en bas de l'écran
   translate(width/2,height);
-  // Draw a line 120 pixels
+  // Dessine une ligne de 120 pixels
   line(0,0,0,-120);
-  // Move to the end of that line
+  // Déplace au bout de la ligne
   translate(0,-120);
-  // Start the recursive branching!
+  // On commence le branchement récursif
   branch(120);
 
 }
 
 void branch(float h) {
-  // Each branch will be 2/3rds the size of the previous one
+  // Chaque branche fera 2/3 de la précédente
   h *= 0.66;
   
-  // All recursive functions must have an exit condition!!!!
-  // Here, ours is when the length of the branch is 2 pixels or less
+  // Toutes les fonctions récursives doivent avoirent une condition de sortie !
+  // La notre vérifie si la branche fait 2 pixels ou moins
   if (h > 2) {
-    pushMatrix();    // Save the current state of transformation (i.e. where are we now)
-    rotate(theta);   // Rotate by theta
-    line(0, 0, 0, -h);  // Draw the branch
-    translate(0, -h); // Move to the end of the branch
-    branch(h);       // Ok, now call myself to draw two new branches!!
-    popMatrix();     // Whenever we get back here, we "pop" in order to restore the previous matrix state
+    pushMatrix();    // Sauvegarde l'état de la transformation
+    rotate(theta);   // Rotation par theta
+    line(0, 0, 0, -h);  // Dessine la branche
+    translate(0, -h); // Déplace au bout de la branche
+    branch(h);       // Récursion !
+    popMatrix();     // Quand on sort de la récursion, on restaure l'état de la transformation
     
-    // Repeat the same thing, only branch off to the "left" this time!
+    // Même chose, avec la branche de "gauche"
     pushMatrix();
     rotate(-theta);
     line(0, 0, 0, -h);

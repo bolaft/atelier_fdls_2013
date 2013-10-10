@@ -1,5 +1,5 @@
-int a = 0;      // Create a variable "a" of the datatype "int"
-float b = 0.0;  // Create a variable "b" of the datatype "float"
+int a = 0;
+float b = 0.0;
 
 void draw() {  
   a = a + 1;

@@ -1,18 +1,18 @@
-int rad = 60;        // Width of the shape
-float xpos, ypos;    // Starting position of shape    
+int rad = 60;        // Largeur de la forme
+float xpos, ypos;    // Position de départ de la forme    
 
-float xspeed = 2.8;  // Speed of the shape
-float yspeed = 2.2;  // Speed of the shape
+float xspeed = 2.8;  // Vitesse horizontale
+float yspeed = 2.2;  // Vitesse verticale
 
-int xdirection = 1;  // Left or Right
-int ydirection = 1;  // Top to Bottom
+int xdirection = 1;  // Gauche à droite
+int ydirection = 1;  // Haut en bas
 
 
 void start() 
 {
   noStroke();
   ellipseMode(RADIUS);
-  // Set the starting position of the shape
+  // Position de départ
   xpos = width/2;
   ypos = height/2;
 }
@@ -21,12 +21,11 @@ void draw()
 {
   background(0);
   
-  // Update the position of the shape
+  // Met à jour la position
   xpos = xpos + ( xspeed * xdirection );
   ypos = ypos + ( yspeed * ydirection );
   
-  // Test to see if the shape exceeds the boundaries of the screen
-  // If it does, reverse its direction by multiplying by -1
+  // Vérifie si on atteint la bordure de l'image
   if (xpos > width-rad || xpos < rad) {
     xdirection *= -1;
   }
@@ -34,6 +33,6 @@ void draw()
     ydirection *= -1;
   }
 
-  // Draw the shape
+  // Dessin de la forme
   ellipse(xpos, ypos, rad, rad);
 }

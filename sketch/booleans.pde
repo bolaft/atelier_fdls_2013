@@ -16,12 +16,12 @@ void draw() {
     }
     
     if (b == true) {
-      // Vertical line
+      // Ligne verticale
       line(i, d, i, height-d);
     }
     
     if (b == false) {
-      // Horizontal line
+      // Ligne horizontale
       line(middle, i - middle + d, width-d, i - middle + d);
     }
   }
