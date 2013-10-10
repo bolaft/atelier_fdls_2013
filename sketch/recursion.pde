@@ -1,8 +1,9 @@
 float theta;
+float a = 1;
 
 void draw() {
-  // Let's pick an angle 0 to 90 degrees based on the mouse position
-  float a = (mouseX / (float) width) * 90f;
+  background(0);
+  a++;
   // Convert it to radians
   theta = radians(a);
   // Start the tree from the bottom of the screen
