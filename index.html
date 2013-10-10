@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Fête de la Science - 2013</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="css/cv.css">
+		<!--[if lt IE 9]>
+			<script src="lib/js/html5shiv.js">
+			</script>
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/processing.js"></script>
+		<script type="text/javascript" src="js/minim.js"></script>
+		<script type="text/javascript" src="js/canvasFocus.js"></script>
+		<script type="text/javascript" src="js/editor.js"></script>
+		
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<section>
+						<h2>Variables</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/variables.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Loop</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/loop.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Booleans</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/booleans.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Increment &amp; Decrement</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/increment_decrement.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Integers &amp; Floats</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/integers_floats.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>2D Array</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/2D_array.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Bounce</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/bounce.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Tree</h2>
+						<canvas width="640"
+										height="360"
+										data-processing-sources=" sketch/setup.pde
+										                          sketch/tree.pde">
+						</canvas>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Mario</h2>
+						<canvas id="mario_canvas"
+										width="512"
+										height="432"
+										data-processing-sources=" sketch/mario/preloads.pde
+                                              sketch/mario/codebase.pde
+                                              sketch/mario/mario.pde
+                                              sketch/mario/algo.pde
+
+                                              sketch/mario/level/mariolevel.pde
+                                              sketch/mario/level/levels_bonuslevel.pde
+                                              sketch/mario/level/levels_darklevel.pde
+                                              sketch/mario/level/levels_mainlevel.pde
+
+                                              sketch/mario/layer/mariolayer.pde
+                                              sketch/mario/layer/layers_background.pde
+                                              sketch/mario/layer/layers_bonuslayer.pde
+                                              sketch/mario/layer/layers_bonuslayer_bg.pde
+                                              sketch/mario/layer/layers_colorlayer.pde
+                                              sketch/mario/layer/layers_darklevellayer.pde
+                                              sketch/mario/layer/layers_mainlayer.pde
+
+                                              sketch/mario/actor/hero.pde
+
+                                              sketch/mario/actor/enemy/enemy.pde
+                                              sketch/mario/actor/enemy/enemy_banzaibill.pde
+                                              sketch/mario/actor/enemy/enemy_bonustarget.pde
+                                              sketch/mario/actor/enemy/enemy_koopa.pde
+                                              sketch/mario/actor/enemy/enemy_muncher.pde
+
+                                              sketch/mario/specials/specials_block.pde
+                                              sketch/mario/specials/specials_keys.pde
+                                              sketch/mario/specials/specials_tubes.pde
+                                              sketch/mario/specials/pickups.pde
+                                              sketch/mario/specials/triggers.pde"
+										tabindex="1">
+						</canvas>
+					</section>
+				</section>
+			</div>
+
+	    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+	    <script type="text/javascript" src="js/processing.js"></script>
+	    <script type="text/javascript" src="js/processing-lazyload.js"></script>
+	    <script type="text/javascript" src="js/minim.js"></script>
+	    <script type="text/javascript" src="js/syntaxHighlight.js"></script>
+	    <script type="text/javascript" src="js/canvasFocus.js"></script>
+			<script src="lib/js/head.min.js"></script>
+			<script src="js/reveal.min.js"></script>
+			<script>
+				Reveal.initialize({
+					controls: true,
+					progress: true,
+					history: true,
+					center: true,
+					rollingLinks: false,
+
+					theme: Reveal.getQueryHash().theme,
+					transition: Reveal.getQueryHash().transition || 'linear',
+					dependencies: [{
+						src: 'lib/js/classList.js',
+						condition: function() {
+							return !document.body.classList;
+						}
+					}, {
+						src: 'plugin/markdown/showdown.js',
+						condition: function() {
+							return !!document.querySelector('[data-markdown]');
+						}
+					}, {
+						src: 'plugin/markdown/markdown.js',
+						condition: function() {
+							return !!document.querySelector('[data-markdown]');
+						}
+					}, {
+						src: 'plugin/highlight/highlight.js',
+						async: true,
+						callback: function() {
+							hljs.initHighlightingOnLoad();
+						}
+					}, {
+						src: 'plugin/zoom-js/zoom.js',
+						async: true,
+						condition: function() {
+							return !!document.body.classList;
+						}
+					}, {
+						src: 'plugin/notes/notes.js',
+						async: true,
+						condition: function() {
+							return !!document.body.classList;
+						}
+					}
+					]
+				});
+			</script>
+	</body>
+</html>
