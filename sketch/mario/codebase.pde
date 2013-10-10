@@ -566,9 +566,9 @@ class Boundary extends Positionable {
 
   /**
    * This boundary is part of a chain, and
-   * the previous boundary is:
+   * the precedent boundary is:
    */
-  void setPrevious(Boundary b) { prev = b; }
+  void setprecedent(Boundary b) { prev = b; }
 
   /**
    * This boundary is part of a chain, and
@@ -738,11 +738,11 @@ abstract class BoundedInteractor extends Interactor implements BoundaryCollision
     }
   }
 
-  // FIXME: make this make sense, because setting 'previous'
+  // FIXME: make this make sense, because setting 'precedent'
   //        should only work on open-bounded interactors.
-  void setPrevious(BoundedInteractor prev) {
+  void setprecedent(BoundedInteractor prev) {
     if(boundaries.size()==1) {
-      boundaries.get(0).setPrevious(prev.boundaries.get(0));
+      boundaries.get(0).setprecedent(prev.boundaries.get(0));
     }
   }
 
@@ -799,8 +799,8 @@ abstract class BoundedInteractor extends Interactor implements BoundaryCollision
     super.update();
 
     // how much did we actually move?
-    float dx = x-previous.x;
-    float dy = y-previous.y;
+    float dx = x-precedent.x;
+    float dy = y-precedent.y;
     // if it's not 0, move the boundaries
     if(dx!=0 && dy!=0) {
       for(Boundary b: boundaries) {
@@ -834,7 +834,7 @@ static class CollisionDetection {
     // no interaction if actor was removed from the game.
     if (a.remove) return;
     // no interaction if actor has not moved.
-    if (a.x == a.previous.x && a.y == a.previous.y) return;
+    if (a.x == a.precedent.x && a.y == a.precedent.y) return;
     float[] correction = blocks(b,a);
     if(correction != null) {
       b.notifyListeners(a, correction);
@@ -849,9 +849,9 @@ static class CollisionDetection {
   static float[] blocks(Boundary b, Actor a)
   {
     float[] current = a.getBoundingBox(),
-            previous = a.previous.getBoundingBox(),
+            precedent = a.precedent.getBoundingBox(),
             line = {b.x, b.y, b.xw, b.yh};
-    return CollisionDetection.getLineRectIntersection(line, previous, current);
+    return CollisionDetection.getLineRectIntersection(line, precedent, current);
   }
 
 
@@ -863,18 +863,18 @@ static class CollisionDetection {
    * direction with the same speed, which gives us a "boundary box", so that
    * we can perform box/box overlap detection instead.
    */
-  static float[] getLineRectIntersection(float[] line, float[] previous, float[] current)
+  static float[] getLineRectIntersection(float[] line, float[] precedent, float[] current)
   {
     if(debug) sketch.println(sketch.frameCount + " ***");    
     if(debug) sketch.println(sketch.frameCount + ">  testing against: "+arrayToString(line));
-    if(debug) sketch.println(sketch.frameCount + ">   previous: "+arrayToString(previous));
+    if(debug) sketch.println(sketch.frameCount + ">   precedent: "+arrayToString(precedent));
     if(debug) sketch.println(sketch.frameCount + ">   current : "+arrayToString(current));
 
     // First, let's do some dot-product math, to find out whether or not
     // the actor's bounding box is even in range of the boundary.
     float x1=line[0], y1=line[1], x2=line[2], y2=line[3],
-          fx = current[0] - previous[0],
-          fy = current[1] - previous[1],
+          fx = current[0] - precedent[0],
+          fy = current[1] - precedent[1],
           pv=PI/2.0,
           dx = x2-x1,
           dy = y2-y1,
@@ -890,30 +890,30 @@ static class CollisionDetection {
     //       complicated intersection detections checks.
 
     // determine range w.r.t. the starting point of the boundary.
-    float[] dotProducts_S_P = getDotProducts(x1,y1,x2,y2, previous);
+    float[] dotProducts_S_P = getDotProducts(x1,y1,x2,y2, precedent);
     float[] dotProducts_S_C = getDotProducts(x1,y1,x2,y2, current);
 
     // determine range w.r.t. the end point of the boundary.
-    float[] dotProducts_E_P = getDotProducts(x2,y2,x1,y1, previous);
+    float[] dotProducts_E_P = getDotProducts(x2,y2,x1,y1, precedent);
     float[] dotProducts_E_C = getDotProducts(x2,y2,x1,y1, current);
 
     // determine 'sidedness', relative to the boundary.
-    float[] dotProducts_P = getDotProducts(x1,y1,x1+rdx,y1+rdy, previous);
+    float[] dotProducts_P = getDotProducts(x1,y1,x1+rdx,y1+rdy, precedent);
     float[] dotProducts_C = getDotProducts(x1,y1,x1+rdx,y1+rdy, current);
 
     // compute the relevant feature values based on the dot products:
     int inRangeSp = 4, inRangeSc = 4,
         inRangeEp = 4, inRangeEc = 4,
-        abovePrevious = 0, aboveCurrent = 0;
+        aboveprecedent = 0, aboveCurrent = 0;
     for(int i=0; i<8; i+=2) {
       if (dotProducts_S_P[i] < 0) { inRangeSp--; }
       if (dotProducts_S_C[i] < 0) { inRangeSc--; }
       if (dotProducts_E_P[i] < 0) { inRangeEp--; }
       if (dotProducts_E_C[i] < 0) { inRangeEc--; }
-      if (dotProducts_P[i] <= 0) { abovePrevious++; }
+      if (dotProducts_P[i] <= 0) { aboveprecedent++; }
       if (dotProducts_C[i] <= 0) { aboveCurrent++; }}
 
-    if(debug) sketch.println(sketch.frameCount +">    dotproduct result: start="+inRangeSp+"/"+inRangeSc+", end="+inRangeEp+"/"+inRangeEc+", sided="+abovePrevious+"/"+aboveCurrent);
+    if(debug) sketch.println(sketch.frameCount +">    dotproduct result: start="+inRangeSp+"/"+inRangeSc+", end="+inRangeEp+"/"+inRangeEc+", sided="+aboveprecedent+"/"+aboveCurrent);
 
     // make sure to short-circuit if the actor cannot
     // interact with the boundary because it is out of range.
@@ -925,12 +925,12 @@ static class CollisionDetection {
     }
 
     // if the force goes against the border's permissible direction, but
-    // both previous and current frame actor boxes are above the boundary,
+    // both precedent and current frame actor boxes are above the boundary,
     // then we don't have to bother with intersection detection.
-    if (abovePrevious==4 && aboveCurrent==4) {
+    if (aboveprecedent==4 && aboveCurrent==4) {
       if(debug) sketch.println(sketch.frameCount +">   this box is not involved in collisions for this frame (inherently safe 'above' locations).");
       return null;
-    } else if(0 < abovePrevious && abovePrevious < 4) {
+    } else if(0 < aboveprecedent && aboveprecedent < 4) {
       if(debug) sketch.println(sketch.frameCount +">   this box is not involved in collisions for this frame (never fully went through boundary).");
       return null;
     }
@@ -938,11 +938,11 @@ static class CollisionDetection {
     // Now then, let's determine whether overlap will occur.
     boolean found = false;
 
-    // We're in bounds: if 'above' is 4, meaning that our previous
+    // We're in bounds: if 'above' is 4, meaning that our precedent
     // actor frame is on the blocking side of a boundary,  and
     // 'aboveAfter' is 0, meaning its current frame is on the other
     // side of the boundary, then a collision MUST have occurred.
-    if (abovePrevious==4 && aboveCurrent==0) {
+    if (aboveprecedent==4 && aboveCurrent==0) {
       // note that in this situation, the overlap may look
       // like full containment, where the actor's bounding
       // box is fully contained by the boundary's box.
@@ -952,9 +952,9 @@ static class CollisionDetection {
 
     else {
       // We're in bounds: do box/box intersection checking
-      // using the 'previous' box and the boundary-box.
-      dx = previous[0] - current[0];
-      dy = previous[1] - current[1];
+      // using the 'precedent' box and the boundary-box.
+      dx = precedent[0] - current[0];
+      dy = precedent[1] - current[1];
 
       // form boundary box
       float[] bbox = {line[0], line[1],
@@ -962,10 +962,10 @@ static class CollisionDetection {
                       line[2]+dx, line[3]+dy,
                       line[0]+dx, line[1]+dy};
 
-      // do any of the "previous" edges intersect
+      // do any of the "precedent" edges intersect
       // with any of the "boundary box" edges?
       int i,j;
-      float[] p = previous, b = bbox, intersection;
+      float[] p = precedent, b = bbox, intersection;
       for(i=0; i<8; i+=2) {
         for(j=0; j<8; j+=2) {
           intersection = getLineLineIntersection(p[i], p[i+1], p[(i+2)%8], p[(i+3)%8], b[j], b[j+1], b[(j+2)%8], b[(j+3)%8], false, true);
@@ -979,7 +979,7 @@ static class CollisionDetection {
 
     // Have we signaled any overlap?
     if (found) {
-      float[] distances = getCornerDistances(x1,y1,x2,y2, previous, current);
+      float[] distances = getCornerDistances(x1,y1,x2,y2, precedent, current);
       int[] corners = rankCorners(distances);
 
       if(debug) {
@@ -990,11 +990,11 @@ static class CollisionDetection {
         sketch.println();
       }
 
-      // Get the corner on the previous and current actor bounding
+      // Get the corner on the precedent and current actor bounding
       // box that will "hit" the boundary first.
       int corner = 0;
-      float xp = previous[corners[corner]],
-            yp = previous[corners[corner]+1],
+      float xp = precedent[corners[corner]],
+            yp = precedent[corners[corner]+1],
             xc = current[corners[corner]],
             yc = current[corners[corner]+1];
 
@@ -1038,20 +1038,20 @@ static class CollisionDetection {
   }
 
   /**
-   * For each corner in an object's bounding box, get the distance from its "previous"
+   * For each corner in an object's bounding box, get the distance from its "precedent"
    * box to the line defined by (x1,y1,x2,y2). Return this as float[8], corresponding
    * to the bounding box array format.
    */
-  static float[] getCornerDistances(float x1, float y1, float x2, float y2, float[] previous, float[] current) {
+  static float[] getCornerDistances(float x1, float y1, float x2, float y2, float[] precedent, float[] current) {
     float[] distances = {0,0,0,0,0,0,0,0}, intersection;
     float dx, dy;
     for(int i=0; i<8; i+=2) {
-      intersection = getLineLineIntersection(x1,y1,x2,y2, previous[i], previous[i+1], current[i], current[i+1], false, false);
+      intersection = getLineLineIntersection(x1,y1,x2,y2, precedent[i], precedent[i+1], current[i], current[i+1], false, false);
       if (intersection == null) {
         continue;
       }
-      dx = intersection[0] - previous[i];
-      dy = intersection[1] - previous[i+1];
+      dx = intersection[0] - precedent[i];
+      dy = intersection[1] - precedent[i+1];
       distances[i] = sqrt(dx*dx+dy*dy);
       distances[i+1] = distances[i];
     }
@@ -2306,7 +2306,7 @@ abstract class Player extends Actor {
 }
 /**
  * This is a helper class for Positionables,
- * used for recording "previous" frame data
+ * used for recording "precedent" frame data
  * in case we need to roll back, or do something
  * that requires multi-frame information
  */
@@ -2480,7 +2480,7 @@ abstract class Positionable extends Position implements Drawable {
    * We track two frames for computational purposes,
    * such as performing boundary collision detection.
    */
-  Position previous = new Position();
+  Position precedent = new Position();
 
   /**
    * Boundaries this positionable is attached to.
@@ -2526,8 +2526,8 @@ abstract class Positionable extends Position implements Drawable {
   void setPosition(float _x, float _y) {
     x = _x;
     y = _y;
-    previous.x = x;
-    previous.y = y;
+    precedent.x = x;
+    precedent.y = y;
     aFrameCount = 0;
     direction = -1;
     jsupdate();
@@ -2593,8 +2593,8 @@ abstract class Positionable extends Position implements Drawable {
   void moveBy(float _x, float _y) {
     x += _x;
     y += _y;   
-    previous.x = x;
-    previous.y = y;
+    precedent.x = x;
+    precedent.y = y;
     aFrameCount = 0;
     jsupdate();
   }
@@ -2770,14 +2770,14 @@ abstract class Positionable extends Position implements Drawable {
   }
 
   /**
-   * get the previous x coordinate.
+   * get the precedent x coordinate.
    */
-  float getPrevX() { return previous.x + previous.ox; }
+  float getPrevX() { return precedent.x + precedent.ox; }
 
   /**
-   * get the previous y coordinate.
+   * get the precedent y coordinate.
    */
-  float getPrevY() { return previous.y + previous.oy; }
+  float getPrevY() { return precedent.y + precedent.oy; }
 
   /**
    * get the current x coordinate.
@@ -2824,7 +2824,7 @@ abstract class Positionable extends Position implements Drawable {
    */
   void update() {
     // cache frame information
-    previous.copyFrom(this);
+    precedent.copyFrom(this);
 
     // work external forces into our current impulse
     addImpulse(fx,fy);
@@ -2866,10 +2866,10 @@ abstract class Positionable extends Position implements Drawable {
   }
 
   /**
-   * Reset this positional to its previous state
+   * Reset this positional to its precedent state
    */
   void rewind() {
-    copyFrom(previous);
+    copyFrom(precedent);
     jsupdate();
   }
 
@@ -2881,7 +2881,7 @@ abstract class Positionable extends Position implements Drawable {
   String toString() {
     return width+"/"+height + "\n" +
             "current: " + super.toString() + "\n" +
-            "previous: " + previous.toString() + "\n";
+            "precedent: " + precedent.toString() + "\n";
   }
 }
 /**
@@ -3010,7 +3010,7 @@ class Point extends ShapePrimitive {
   }
 
   void draw() {
-    // if curve, show to-previous control point
+    // if curve, show to-precedent control point
     if (cpoint) {
       line(x-cx,y-cy,x,y);
       ellipse(x-cx,y-cy,3,3);

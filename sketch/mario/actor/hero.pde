@@ -53,6 +53,22 @@ class Mario extends Player {
     super.addState(st);
   }
 
+  void courirDroite() {
+    d = true;
+  }
+
+  void courirGauche() {
+    q = false;
+  }
+
+  void sauter() {
+    z = true;
+  }
+
+  void seBaisser() {
+    s = true;
+  }
+
   /**
    * Set up our states
    */
@@ -110,7 +126,7 @@ class Mario extends Player {
     d = false;
     q = false;
     s = false;
-    doAlgorithm(this, getLevelLayer().enemies);
+    choixAction(this, getLevelLayer().enemies);
 
     if(!z) z = isKeyDown('Z');
     if(!d) d = isKeyDown('D');

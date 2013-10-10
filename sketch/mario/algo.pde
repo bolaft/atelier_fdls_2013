@@ -1,20 +1,36 @@
-void doAlgorithm(mario, enemies)
+/**
+ * VARIABLES :
+ * 
+ * mario.x ou ennemi.x = position horizontale du personnage
+ * mario.y ou ennemi.y = position verticale du personnage
+ * mario.precedent.x ou ennemi.precedent.x = nombre position horizontale du personnage à la frame précédente
+ * mario.precedent.y ou ennemi.precedent.x = position verticale du personnage à la frame précédente
+ *
+ * ACTIONS :
+ *
+ * mario.courirDroite()
+ * mario.courirGauche()
+ * mario.sauter()
+ * mario.seBaisser()
+ */
+
+void choixAction(mario, ennemis)
 {
 	if (mario.hasKey == false){
-		mario.d = true;
+		mario.courirDroite();
 	} else {
-		mario.q = true;
+		mario.courirGauche();
 	}
 
-	for (int i = 0; i < enemies.size(); i++) {
-	    enemy = enemies.get(i);
+	for (int i = 0; i < ennemis.size(); i++) {
+	    ennemi = ennemis.get(i);
 
-	    if (enemy.x - mario.x < 35 && enemy.x > mario.x){
-	    	mario.z = true;
+	    if (ennemi.x - mario.x < 35 && ennemi.x > mario.x){
+	    	mario.sauter();
 	    }
 	}
 
-    if (mario.x == mario.previous.x) {
-      mario.z = true;
+    if (mario.x == mario.precedent.x) {
+      mario.sauter();
     }
 }
