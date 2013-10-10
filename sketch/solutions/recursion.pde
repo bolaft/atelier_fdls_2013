@@ -17,7 +17,7 @@ void draw() {
 
 }
 
-void branch(h) {
+void branch(float h) {
   // Chaque branche fera 2/3 de la précédente
   h *= 0.66;
   

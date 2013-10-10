@@ -10,7 +10,7 @@ void start() {
 }
 
 void draw() {
-  a = 50;
+  a++;
   if(a > width) {
     a = 0;
     direction = !direction;

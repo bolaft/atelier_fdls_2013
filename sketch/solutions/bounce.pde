@@ -1,4 +1,4 @@
-int radius = 60;        // Largeur de la forme
+int rad = 60;        // Largeur de la forme
 float xpos, ypos;    // Position de départ de la forme    
 
 float xspeed = 2.8;  // Vitesse horizontale
@@ -26,13 +26,13 @@ void draw()
   ypos = ypos + ( yspeed * ydirection );
   
   // Vérifie si on atteint la bordure de l'image
-  if (xpos > width-radius) {
+  if (xpos > width-rad || xpos < rad) {
     xdirection *= -1;
   }
-  if (ypos > height-radius) {
+  if (ypos > height-rad || ypos < rad) {
     ydirection *= -1;
   }
 
   // Dessin de la forme
-  ellipse(xpos, ypos, radius, radius);
+  ellipse(xpos, ypos, rad, rad);
 }

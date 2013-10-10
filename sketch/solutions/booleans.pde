@@ -6,9 +6,9 @@ void draw() {
 
   for (i = d; i <= width; i += d) {
     if (i < middle) {
-
+      b = true;
     } else {
-
+      b = false;
     }
     
     if (b == true) {
