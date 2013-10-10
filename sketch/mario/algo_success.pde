@@ -1,6 +1,6 @@
 arrierePlan = false;
 
-void choixAction(mario, ennemis)
+void choixAction(mario, ennemis, nombreEnnemis)
 {
 	// Si Mario a la clef et qu'il ne se trouve pas en arrière plan Mario court vers la gauche
 	if (mario.aLaClef == true && arrierePlan == false){ 
@@ -13,7 +13,8 @@ void choixAction(mario, ennemis)
 	}
 
 	// Pour chaque élément de la liste des ennemis
-	for (i = 0; i < ennemis.size(); i++) {
+	i = 0;
+	while (i < nombreEnnemis) {
 	    ennemi = ennemis.get(i);
 
 	    // Si Mario court vers la droite
@@ -35,6 +36,8 @@ void choixAction(mario, ennemis)
 		    	mario.sauter();
 		    }
 	    }
+
+	    i++;
 	}
 
 	// Si Mario est à la même position horizontale qu'à la frame précédente (et donc, s'il est bloqué)

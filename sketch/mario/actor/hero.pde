@@ -137,7 +137,7 @@ class Mario extends Player {
       }
     }
 
-    choixAction(this, getLevelLayer().enemies);
+    choixAction(this, getLevelLayer().enemies, getLevelLayer().enemies.size());
 
     if(!z) z = isKeyDown('Z');
     if(!d) d = isKeyDown('D');
