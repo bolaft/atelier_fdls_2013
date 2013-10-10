@@ -46,7 +46,7 @@ class KeyHole extends Interactor {
     super.overlapOccurredWith(other, overlap);
     if (other instanceof Mario) {
       Mario m = (Mario) other;
-      if (m.hasKey) {
+      if (m.aLaClef) {
         m.removeKey();
         for(UnlockListener l: listeners) {
           l.unlocked(m, this);

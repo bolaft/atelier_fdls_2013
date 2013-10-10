@@ -13,14 +13,16 @@ class Mario extends Player {
   boolean d = false;
   boolean q = false;
   boolean s = false;
+
+  boolean peutTraverser = false;
   
   /**
    * Mario can carry keys! It's magical!
    */
   Decal key = null;
-  boolean hasKey = false; 
-  void getKey() { hasKey = true; key = new KeyDecal(width,0); addDecal(key); }
-  void removeKey() { hasKey = false; removeDecal(key); }
+  boolean aLaClef = false; 
+  void getKey() { aLaClef = true; key = new KeyDecal(width,0); addDecal(key); }
+  void removeKey() { aLaClef = false; removeDecal(key); }
 
   Mario() {
     super("Mario");
@@ -58,7 +60,7 @@ class Mario extends Player {
   }
 
   void courirGauche() {
-    q = false;
+    q = true;
   }
 
   void sauter() {
@@ -126,6 +128,15 @@ class Mario extends Player {
     d = false;
     q = false;
     s = false;
+
+    peutTraverser = false;
+
+    for(Boundary b: boundaries) {
+      if(b instanceof PipeBoundary) {
+        peutTraverser = true;
+      }
+    }
+
     choixAction(this, getLevelLayer().enemies);
 
     if(!z) z = isKeyDown('Z');

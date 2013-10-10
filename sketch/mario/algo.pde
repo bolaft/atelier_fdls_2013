@@ -1,36 +1,22 @@
 /**
- * VARIABLES :
+ * POSITIONS :
+ *    personnage.x          	position horizontale du personnage
+ *    personnage.y          	position verticale du personnage
+ *    personnage.precedent.x 	position horizontale du personnage à la frame précédente
+ *    personnage.precedent.y 	position verticale du personnage à la frame précédente
+ *
+ * BOOLÉENS :
+ *    mario.aLaClef 			vrai si Mario transporte la clef
+ *    mario.peutTraverser 		vrai si Mario peut traverser un conduit
  * 
- * mario.x ou ennemi.x = position horizontale du personnage
- * mario.y ou ennemi.y = position verticale du personnage
- * mario.precedent.x ou ennemi.precedent.x = nombre position horizontale du personnage à la frame précédente
- * mario.precedent.y ou ennemi.precedent.x = position verticale du personnage à la frame précédente
- *
  * ACTIONS :
- *
- * mario.courirDroite()
- * mario.courirGauche()
- * mario.sauter()
- * mario.seBaisser()
+ *    mario.courirDroite() 		Mario court vers la droite
+ *    mario.courirGauche() 		Mario court vers la gauche
+ *    mario.sauter() 			Mario saute (seulement s'il est sur une surface solide)
+ *    mario.seBaisser() 		Mario se baisse (permet aussi de traverser les conduits)
  */
 
 void choixAction(mario, ennemis)
 {
-	if (mario.hasKey == false){
-		mario.courirDroite();
-	} else {
-		mario.courirGauche();
-	}
 
-	for (int i = 0; i < ennemis.size(); i++) {
-	    ennemi = ennemis.get(i);
-
-	    if (ennemi.x - mario.x < 35 && ennemi.x > mario.x){
-	    	mario.sauter();
-	    }
-	}
-
-    if (mario.x == mario.precedent.x) {
-      mario.sauter();
-    }
 }

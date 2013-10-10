@@ -4,6 +4,7 @@
  */
 class MainBackgroundLayer extends MarioLayer {
   Mario mario;
+  ArrayList<Interactor> enemies = new ArrayList<Interactor>();
   MainBackgroundLayer(Level owner) {
     super(owner, owner.width, owner.height, 0,0, 0.75,0.75);
     addBackgroundSprite(new TilingSprite(new Sprite("graphics/backgrounds/sky_2.gif"),0,0,width,height));

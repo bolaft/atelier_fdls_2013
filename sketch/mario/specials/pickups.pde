@@ -108,9 +108,9 @@ class Rope extends MarioPickup {
   Rope(float x, float y) {
     super("Finish line", "graphics/assorted/Goal-slider.gif", 1, 1, x, y, true);
     State st = getState("Finish line");
-    st.addPathLine(0, 0,     0, -116, 50);
+    /*st.addPathLine(0, 0,     0, -116, 50);
     st.addPathLine(0, -116,  0, 0,    50);
-    st.setLooping(true);
+    st.setLooping(true);*/
     Sprite spr = st.sprite;
     spr.align(LEFT, TOP);
     spr.setNoRotation(true);
