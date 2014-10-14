@@ -1370,7 +1370,6 @@ Screen activeScreen = null;
 void setup() {
   size(screenWidth, screenHeight);
   noLoop();
-
   screenSet = new HashMap<String, Screen>();
   SpriteMapHandler.init(this);
   SoundManager.init(this);

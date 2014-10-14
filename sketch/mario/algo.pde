@@ -18,5 +18,5 @@
 
 void choixAction(mario, ennemis)
 {
-
+	
 }
