@@ -29,6 +29,7 @@ class Mario extends Player {
     setupStates(spriteSet, type);
     setCurrentState("idle");
     // input handling
+    handleKey('K');
     /*handleKey('Z');
     handleKey('Q');
     handleKey('S');
@@ -135,6 +136,10 @@ class Mario extends Player {
       if(b instanceof PipeBoundary) {
         peutTraverser = true;
       }
+    }
+
+    if (isKeyDown('K')){
+      this.die();
     }
 
     choixAction(this, getLevelLayer().enemies, getLevelLayer().enemies.size());

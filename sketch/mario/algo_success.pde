@@ -4,7 +4,7 @@ void choixAction(mario, ennemis, nombreEnnemis)
 {
 	// Si Mario a la clef et qu'il ne se trouve pas en arrière plan Mario court vers la gauche
 	if (mario.aLaClef == true && arrierePlan == false){ 
-		directionDroite = false;
+		directionDroite = false
 		mario.courirGauche();
 	// Sinon Mario court vers la droite
 	} else {

@@ -3,7 +3,7 @@
  */
 class MarioLevel extends Level {
   Player mario;
-  String wintext = "Goal!";
+  String wintext = "";
   int endCount = 0;
 
   MarioLevel(float w, float h) { 

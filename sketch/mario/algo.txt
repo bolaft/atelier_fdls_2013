@@ -1,0 +1,7 @@
+mario court à droite
+
+pour chaque monstre
+	si le x du monstre est supérieur au x de mario alors
+		mario saute
+	fin si
+fin pour

@@ -2,7 +2,7 @@
  * We must set the screen dimensions to something
  */
 final int BLOCK = 16,
-          screenWidth = 32*BLOCK,
+          screenWidth = 54*BLOCK,
           screenHeight = 27*BLOCK;
 
 /**
@@ -21,7 +21,7 @@ float DAMPENING = 0.75;
 void initialize() {
   //SoundManager.mute(true);
   //SoundManager.setDrawPosition(screenWidth-10, 10);
-  frameRate(60);
+  /*frameRate(20);*/
   reset();
 }
 
