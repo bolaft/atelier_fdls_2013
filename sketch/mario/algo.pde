@@ -27,14 +27,18 @@ flottant = 0.0;
 flottant1 = 0.0;
 flottant2 = 0.0;
 
-void choixAction(mario, ennemis, nombreEnnemis)
+void choixAction(mario, monstres, nombreDeMonstres)
 {
-	console.log(nombreEnnemis);
+	console.log(nombreDeMonstres);
 	lines = loadStrings("sketch/mario/algo.txt");
 
 	String code = "";
 
 	for (int i = 0; i < lines.length; i++) {
+		if (lines[i] == "demo") {
+			choixActionSuccess(mario, monstres, nombreDeMonstres);
+			break;
+		}
 		code += interpret(lines[i]) + "\n";
 	}
 
@@ -59,8 +63,10 @@ String interpret(s)
 	s = s.replace("mario peut traverser", "mario.peutTraverser");
 	s = s.replace("mario ne peut pas traverser", "mario.peutTraverser == false");
 
+	s = s.replace("est vraie", "== true");
 	s = s.replace("est vrai", "== true");
 	s = s.replace("est faux", "== false");
+	s = s.replace("est fausse", "== false");
 
 	s = s.replace("est égal à", "==");
 	s = s.replace("est supérieur à", ">");
@@ -86,30 +92,96 @@ String interpret(s)
 	s = s.replace("sinon si", "} else if (");
 	s = s.replace("sinon", "} else {");
 	s = s.replace("si ", "if (");
-	s = s.replace("tant que", "");
-	s = s.replace("fin tant que", "}");
 	s = s.replace("fin si", "}");
 
-	s = s.replace("pour chaque monstre", "i = 0; while (i < nombreEnnemis) { ennemi = ennemis.get(i);");
+	s = s.replace("pour chaque monstre", "i = 0; while (i < nombreDeMonstres) { monstre = monstres.get(i);");
 	s = s.replace("fin pour", "i++; }");
 
 	s = s.replace("le x de mario", "mario.x");
+	s = s.replace("la position horizontale de mario", "mario.x");
 	s = s.replace("le y de mario", "mario.y");
+	s = s.replace("la position verticale de mario", "mario.y");
 
-	s = s.replace("le x du monstre", "ennemi.x");
-	s = s.replace("le y du monstre", "ennemi.y");
+	s = s.replace("le x du monstre", "monstre.x");
+	s = s.replace("la position horizontale du monstre", "monstre.x");
+	s = s.replace("le y du monstre", "monstre.y");
+	s = s.replace("la position verticale du monstre", "monstre.y");
 
 	s = s.replace("le x précédent de mario", "mario.precedent.x");
-	s = s.replace("le y précédente de mario", "mario.precedent.y");
+	s = s.replace("la position horizontale précédente de mario", "mario.precedent.x");
+	s = s.replace("le y précédent de mario", "mario.precedent.y");
+	s = s.replace("la position verticale précédente de mario", "mario.precedent.y");
+	s = s.replace("le x précédent du monstre", "monstre.precedent.x");
+	s = s.replace("la position horizontale précédente du monstre", "monstre.precedent.x");
+	s = s.replace("le y précédent du monstre", "monstre.precedent.y");
+	s = s.replace("la position verticale précédente du monstre", "monstre.precedent.y");
 
-	s = s.replace("le x précédent du monstre", "ennemi.precedent.x");
-	s = s.replace("le y précédente du monstre", "ennemi.precedent.y");
+	s = s.replace("faux", "false");
+	s = s.replace("vraie", "true");
+	s = s.replace("vrai", "true");
 
-/*	s = s.replace("vrai", "true")*/
+	/*	s = s.replace("vrai", "true")*/
 
 	/*for (Map.Entry me : t.entrySet()) {
 		s = s = s.replace(me.getKey(), me.getValue());
 	}*/
 
 	return s;
+}
+
+arrierePlan = false;
+
+void choixActionSuccess(mario, ennemis, nombreEnnemis)
+{
+	// Si Mario a la clef et qu'il ne se trouve pas en arrière plan Mario court vers la gauche
+	if (mario.aLaClef == true && arrierePlan == false){ 
+		directionDroite = false
+		mario.courirGauche();
+	// Sinon Mario court vers la droite
+	} else {
+		directionDroite = true;
+		mario.courirDroite();
+	}
+
+	// Pour chaque élément de la liste des ennemis
+	i = 0;
+	while (i < nombreEnnemis) {
+	    ennemi = ennemis.get(i);
+
+	    // Si Mario court vers la droite
+	    if (directionDroite == true){
+	    	// ... et si un ennemi se trouve à moins de 35 pixels à DROITE de Mario
+		    if (ennemi.x - mario.x < 35 
+		    	// ... et qu'il est à droite de Mario
+		    	&& ennemi.x > mario.x){
+		    	// alors Mario saute.
+		    	mario.sauter();
+		    }
+		// Sinon
+	    } else {
+	    	// ... si un ennemi se trouve à moins de 35 pixels à GAUCHE de Mario
+		    if (ennemi.x - mario.x > -35 
+		    	// ... et qu'il est à gauche de Mario
+		    	&& ennemi.x - mario.x < 0){
+		    	// alors Mario saute.
+		    	mario.sauter();
+		    }
+	    }
+
+	    i++;
+	}
+
+	// Si Mario est à la même position horizontale qu'à la frame précédente (et donc, s'il est bloqué)
+    if (mario.x == mario.precedent.x) {
+    	// alors Mario saute
+    	mario.sauter();
+    }
+
+	// Si Mario peut traverser un conduit, et s'il a la clef, et s'il ne se trouve pas déjà à l'arrière plan
+    if (mario.peutTraverser == true && mario.aLaClef == true && arrierePlan == false){
+    	// alors Mario se baisse
+    	mario.seBaisser();
+    	// on enregistre qu'on est passé à l'arrière-plan
+    	arrierePlan = true;
+    }
 }
