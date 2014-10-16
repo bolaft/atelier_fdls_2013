@@ -1,61 +1,61 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Fête de la Science - 2014</title>
-		<meta charset="utf-8">
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/beige.css" id="theme">
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-		<link rel="stylesheet" href="css/cv.css">
-		<!--[if lt IE 9]>
-			<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-		<script type="text/javascript" src="js/processing.js"></script>
-		<script type="text/javascript" src="js/minim.js"></script>
-		<script type="text/javascript" src="js/canvasFocus.js"></script>
-		<script type="text/javascript" src="js/editor.js"></script>
+    <head>
+        <title>Fête de la Science - 2014</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/cv.css">
+        <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+        <script type="text/javascript" src="js/editor.js"></script>
 
-	    <style type="text/css">
-	        li {
-	            font-size: 90% !important;
-	        }
+        <style type="text/css">
+            li {
+                font-size: 90% !important;
+            }
 
-	        li > ul > li {
-	            font-size: 80% !important;
-	        }
-	    </style>
+            li > ul > li {
+                font-size: 80% !important;
+            }
+        </style>
 
-	</head>
+    </head>
 
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
 
-					<section>
-						<img src="img/mario.png" alt="mario" width="250px" style="box-shadow: 0 0 0px">
-						<h1>Un algo pour Mario</h1>
-					</section>
-				</section>
+                    <section>
+                        <img src="img/mario.png" alt="mario" width="250px" style="box-shadow: 0 0 0px">
+                        <h1>Un algo pour Mario</h1>
+                    </section>
+                </section>
 
-				<section>
-					<section>
-						<h3>Au programme :</h3>
-						<ul>
-							<li>Qu'est ce qu'un algorithme ? (5 minutes)</li>
-							<li>Comment construire un algorithme (5-10 minutes)</li>
-							<li>Imaginer un algorithme pour contrôler Mario (25-30 minutes)</li>
-						</ul>
-					</section>
+                <section>
+                    <section>
+                        <h3>Au programme :</h3>
+                        <ul>
+                            <li>Qu'est ce qu'un algorithme ? (5 minutes)</li>
+                            <li>Comment construire un algorithme (5-10 minutes)</li>
+                            <li>Imaginer un algorithme pour contrôler Mario (25-30 minutes)</li>
+                        </ul>
+                    </section>
 
-					<!-- <section>
-						<h2>Exemple</h2>
-						<canvas id="mario_canvas_first"
-								width="800"
-								height="432"
-								data-processing-sources=" sketch/mario/preloads.pde
+                    <!-- <section>
+                        <h2>Exemple</h2>
+                        <canvas id="mario_canvas_first"
+                                width="800"
+                                height="432"
+                                data-processing-sources=" sketch/mario/preloads.pde
                                                           sketch/mario/codebase.pde
                                                           sketch/mario/mario.pde
                                                           sketch/mario/algo_success.pde
@@ -86,177 +86,179 @@
                                                           sketch/mario/specials/specials_tubes.pde
                                                           sketch/mario/specials/pickups.pde
                                                           sketch/mario/specials/triggers.pde"
-								tabindex="2">
-						</canvas>
-					</section> -->
-				</section>
+                                tabindex="2">
+                        </canvas>
+                    </section> -->
+                </section>
 
-				<section>
+                <section>
 
-					<section>
-						<h2>Qu'est ce qu'un algorithme ?</h2>
-					</section>
+                    <section>
+                        <h2>Qu'est ce qu'un algorithme ?</h2>
+                    </section>
 
-					<section>
-						<h3>Généralités</h3>
-						<ul>
-							<li>Forme latine (Algorismus) du nom du mathématicien Al Kharezmi (VIIIe siècle)</li>
-							<li>Une suite d'opérations élémentaires pour résoudre un problème donné</li>
-							<li>Entrée -> Algorithme -> Sortie</li>
-							<li>Uniquement des instructions compréhensibles par celui qui l'exécute</li>
-						</ul>
-					</section>
-				</section>
+                    <section>
+                        <h3>Généralités</h3>
+                        <ul>
+                            <li>Fondamentaux :
+                                <ul>
+                                    <li>Une méthode systématique à appliquer pour résoudre un problème donné</li>
+                                    <li>Une suite structurée d'opérations élémentaires</li>
+                                    <li>Uniquement des instructions compréhensibles par celui qui l'exécute</li>
+                                </ul>
+                            </li>
+                            <li>Historique :
+                                <ul>
+                                    <li>Forme latine (Algorismus) du nom du mathématicien Al Khwarizmi (VIIIe siècle)</li>
+                                    <li>Kitab Al Jabr (Livre du Chiffre), qui donnera aussi son nom au mot Algèbre</li>
+                                    <li>Historiquement, l'algorithmique est lié aux mathématiques</li>
+                                    <li>Plus ancien algorithme connu : l'algorithme d'Euclide (300 av. J.-C)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </section>
 
-				<section>
-					<section>
-						<h2>Les variables</h2>
-					</section>
+                <section>
+                    <section>
+                        <h2>Les variables</h2>
+                    </section>
 
-					<section>
-						<h3>Affectation de variables</h3>
-						<strong>Affectation directe</strong>
-						<pre><code>
-chaine = "blablabla"
+                    <section>
+                        <h3>Affectation de variables</h3>
+                        <strong>Affectation directe</strong>
+                        <pre><code>chaine = "blablabla"
 nombre = 15
-nombreAVirguleFlottante = 15.141
-booleen = true
-valeurNulle = null
-						</code></pre>
-						<strong>Affectation indirecte</strong>
-						<pre><code>
-nombre = 23
-nombreIdentique = nombre;
+flottant = 15.141
+booléen = vrai</code></pre>
+                        <strong>Affectation indirecte</strong>
+                        <pre><code>nombre1 = 23
+nombre2 = nombre1</code></pre>
+                    </section>
 
-===> 23
-						</code></pre>
-					</section>
+                    <section>
+                        <h3>Opérations sur les variables</h3>
 
-					<section>
-						<h3>Opérations sur les variables</h3>
-						<strong>Opérations arithmétiques</strong>
-						<pre><code>
-nombre1 = 5 * 2
+                        <strong>Opérations arithmétiques</strong>
+                        <pre><code>nombre1 = 5 * 2
 nombre2 = 12/3 
-nombre3 = (nombre1 + 10) / nombre2
-
-===> 5
-						</code></pre>
-						<strong>Concaténation</strong>
-						<pre><code>
-mot1 = "Hello"
+nombre3 = (nombre1 + 10) / nombre2</code></pre>
+                        <strong>Concaténation</strong>
+                        <pre><code>mot1 = "Hello"
 mot2 = "World"
 
-helloWorld = mot1 + " " + mot2
+phrase = mot1 + " " + mot2</code></pre>
+                    </section>
+                </section>
 
-===> "Hello World"
-						</code></pre>
-					</section>
-				</section>
+                <section>
+                    <section>
+                        <h2>Les conditions</h2>
+                    </section>
 
-				<section>
-					<section>
-						<h2>Les conditions</h2>
-					</section>
+                    <section>
+                        <h3>Structures logiques</h3>
 
-					<section>
-						<strong>Si</strong>
-						<pre><code>
-Si booléen Alors
-  Instructions
-Finsi
-						</code></pre>
-						<strong>Sinon</strong>
-						<pre><code>
-Si booléen Alors
-  Instructions 1
-Sinon
-  Instructions 2
-Finsi
-						</code></pre>
-						<strong>Sinon Si</strong>
-						<pre><code>
-Si booléen Alors
-  Instructions 1
-Sinon Si booléan Alors
-  Instructions 2
-Finsi
-						</code></pre>
-					</section>
+                        <strong>SI</strong>
+                        <pre><code>pluie = vrai
 
-					<section>
-						<h2>Opérateurs logiques</h2>
-						<strong>ET (&amp;&amp;)</strong>
-						<pre><code>
-ilPleut = false
-ilVente = true
+SI pluie ALORS
+    prendre un parapluie
+FIN SI</code></pre>
+                        <strong>SINON</strong>
+                        <pre><code>pluie = vrai
 
-Si ilVente ET ilPleut
-	resterChezSoi();
-FinSi
-						</code></pre>
-						<strong>OU (||)</strong>
-						<pre><code>
-ilPleut = v
-ilVente = false
+SI pluie ALORS
+    prendre un parapluie
+SINON
+    étendre le linge
+FIN SI</code></pre>
+                        <strong>SINON SI</strong>
+                        <pre><code>pluie = faux
+canicule = vrai
 
-Si ilVente ET ilPleut
-	resterChezSoi()
-Sinon Si ilVente OU ilPleut
-	prendreParapluie()
-FinSi
-						</code></pre>
-					</section>
-				</section>
+SI pluie ALORS
+    prendre un parapluie
+SINON SI canicule ALORS
+    prendre un parasol
+FIN SI</code></pre>
+                    </section>
 
-				<section>
-					<section>
-						<h2>Les boucles</h2>
-					</section>
+                    <section>
+                        <h3>Opérateurs logiques</h3>
+                        <strong>Conjonction et disjonction</strong>
+                        <pre><code>neige = vrai
+vent = faux
 
-					<section>
-						<strong>Tant que</strong>
-						<pre><code>
-entrée = lire()
+SI vent ET neige ALORS
+    rester chez soi
+SINON SI vent OU neige ALORS
+    prendre un manteau
+FIN SI</code></pre>
+                        <strong>Égalité, supériorité et infériorité</strong>
+                        <pre><code>x = 1
+y = 3
+z = 3
 
-TantQue lire() != "oui" &amp;&amp; entrée != "non"
-  entrée = lire()
-FinTantQue
-						</code></pre>
-						<strong>Pour</strong>
-						<pre><code>
-Pour x = 1 à 10
-  écrire(x)
-FinPour
-						</code></pre>
-					</section>
-				</section>
+SI x <= y ALORS
+    x = 4
+FIN SI
 
-				<section>
-					<section>
-						<h2>Les fonctions</h2>
-					</section>
-						<section>
-							<strong>Avec argument</strong>
-							<pre><code>
-doubler(x)
-  x = 2 * x
-							</code></pre>
-							<strong>Sans argument</strong>
-							<pre><code>
-alerte()
-  écrire("Attention!")
-							</code></pre>
-						</section>
-				</section>
+SI y == z ET x > y ALORS
+    x = x + z
+FIN SI</code></pre>
+                    </section>
+                </section>
 
-				<section>
-					<section>
-						<h2>Mario</h2>
-						<canvas id="mario_canvas"
-								width="800"
-								height="432"
-								data-processing-sources=" sketch/mario/preloads.pde
+                <section>
+                    <section>
+                        <h2>Les boucles</h2>
+                    </section>
+
+                    <section>
+                        <strong>TANT QUE</strong>
+                        <pre><code>x = 0
+
+TANT QUE x < 10
+    x = x + 1
+FIN TANT QUE</code></pre>
+                        <strong>POUR</strong>
+                        <pre><code>x = 1
+
+POUR x DE 1 À 3
+    x = x + y
+FIN POUR</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Les fonctions</h2>
+                    </section>
+                        <section>
+                            <strong>Sans argument</strong>
+                            <pre><code>FONCTION chiffre()
+    RETOURNER 5
+FIN FONCTION
+
+x = chiffre()</code></pre>
+                            <strong>Avec argument</strong>
+                            <pre><code>FONCTION doubler(p)
+    r = p * 2
+    RETOURNER r
+FIN FONCTION
+
+x = doubler(12)</code></pre>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Mario</h2>
+                        <canvas id="mario_canvas"
+                                width="800"
+                                height="432"
+                                data-processing-sources=" sketch/mario/preloads.pde
                                                           sketch/mario/codebase.pde
                                                           sketch/mario/mario.pde
                                                           sketch/mario/algo.pde
@@ -287,78 +289,78 @@ alerte()
                                                           sketch/mario/specials/specials_tubes.pde
                                                           sketch/mario/specials/pickups.pde
                                                           sketch/mario/specials/triggers.pde"
-								tabindex="1">
-						</canvas>
-					</section>
-				</section>
+                                tabindex="1">
+                        </canvas>
+                    </section>
+                </section>
 
-				<section>
-					<section>
-						<h3>Language &amp; tutos :</h3>
-						<div>processing.org</div>
-						<div>processingjs.org</div>
-						<br>
-						<h3>Sources :</h3>
-						<div>github.com/Pomax/Pjs-2D-Game-Engine</div>
-						<div>github.com/bolaft/atelier_fdls_2013</div>
-					</section>
-				</section>
-			</div>
+                <section>
+                    <section>
+                        <h3>Language &amp; tutos :</h3>
+                        <div>processing.org</div>
+                        <div>processingjs.org</div>
+                        <br>
+                        <h3>Sources :</h3>
+                        <div>github.com/Pomax/Pjs-2D-Game-Engine</div>
+                        <div>github.com/bolaft/atelier_fdls_2013</div>
+                    </section>
+                </section>
+            </div>
 
-	    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-	    <script type="text/javascript" src="js/processing.js"></script>
-	    <script type="text/javascript" src="js/processing-lazyload.js"></script>
-	    <script type="text/javascript" src="js/minim.js"></script>
-	    <script type="text/javascript" src="js/syntaxHighlight.js"></script>
-	    <script type="text/javascript" src="js/canvasFocus.js"></script>
-			<script src="lib/js/head.min.js"></script>
-			<script src="js/reveal.min.js"></script>
-			<script>
-				Reveal.initialize({
-					controls: true,
-					progress: true,
-					history: true,
-					center: true,
-					rollingLinks: false,
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/processing-lazyload.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/syntaxHighlight.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+            <script src="lib/js/head.min.js"></script>
+            <script src="js/reveal.min.js"></script>
+            <script>
+                Reveal.initialize({
+                    controls: true,
+                    progress: true,
+                    history: true,
+                    center: true,
+                    rollingLinks: false,
 
-					theme: Reveal.getQueryHash().theme,
-					transition: Reveal.getQueryHash().transition || 'linear',
-					dependencies: [{
-						src: 'lib/js/classList.js',
-						condition: function() {
-							return !document.body.classList;
-						}
-					}, {
-						src: 'plugin/markdown/showdown.js',
-						condition: function() {
-							return !!document.querySelector('[data-markdown]');
-						}
-					}, {
-						src: 'plugin/markdown/markdown.js',
-						condition: function() {
-							return !!document.querySelector('[data-markdown]');
-						}
-					}, {
-						src: 'plugin/highlight/highlight.js',
-						async: true,
-						callback: function() {
-							hljs.initHighlightingOnLoad();
-						}
-					}, {
-						src: 'plugin/zoom-js/zoom.js',
-						async: true,
-						condition: function() {
-							return !!document.body.classList;
-						}
-					}, {
-						src: 'plugin/notes/notes.js',
-						async: true,
-						condition: function() {
-							return !!document.body.classList;
-						}
-					}
-					]
-				});
-			</script>
-	</body>
+                    theme: Reveal.getQueryHash().theme,
+                    transition: Reveal.getQueryHash().transition || 'linear',
+                    dependencies: [{
+                        src: 'lib/js/classList.js',
+                        condition: function() {
+                            return !document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/markdown/showdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }, {
+                        src: 'plugin/markdown/markdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }/*, {
+                        src: 'plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function() {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }*/, {
+                        src: 'plugin/zoom-js/zoom.js',
+                        async: true,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/notes/notes.js',
+                        async: true,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }
+                    ]
+                });
+            </script>
+    </body>
 </html>

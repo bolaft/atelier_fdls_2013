@@ -39,7 +39,8 @@ void choixAction(mario, monstres, nombreDeMonstres)
 			choixActionSuccess(mario, monstres, nombreDeMonstres);
 			break;
 		}
-		code += interpret(lines[i]) + "\n";
+		
+		code += interpret(lines[i].toLowerCase()) + "\n";
 	}
 
 	console.log(code);
