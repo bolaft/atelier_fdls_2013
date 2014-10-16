@@ -38,9 +38,7 @@
                         <img src="img/mario.png" alt="mario" width="250px" style="box-shadow: 0 0 0px">
                         <h1>Un algo pour Mario</h1>
                     </section>
-                </section>
 
-                <section>
                     <section>
                         <h3>Au programme :</h3>
                         <ul>
@@ -49,6 +47,7 @@
                             <li>Imaginer un algorithme pour contrôler Mario (25-30 minutes)</li>
                         </ul>
                     </section>
+                </section>
 
                     <!-- <section>
                         <h2>Exemple</h2>
@@ -89,7 +88,6 @@
                                 tabindex="2">
                         </canvas>
                     </section> -->
-                </section>
 
                 <section>
 
@@ -100,81 +98,125 @@
                     <section>
                         <h3>Généralités</h3>
                         <ul>
-                            <li>Fondamentaux :
+                            <li class="fragment">Fondamentaux :
                                 <ul>
                                     <li>Une méthode systématique à appliquer pour résoudre un problème donné</li>
-                                    <li>Une suite structurée d'opérations élémentaires</li>
+                                    <li>Exemple : écrire une recette de cuisine, indiquer son chemin à quelqu'un...</li>
                                     <li>Uniquement des instructions compréhensibles par celui qui l'exécute</li>
+                                    <li>Pratique pour les programmes informatiques</li>
                                 </ul>
                             </li>
-                            <li>Historique :
+                            <hr>
+                            <li class="fragment">Historique :
                                 <ul>
                                     <li>Forme latine (Algorismus) du nom du mathématicien Al Khwarizmi (VIIIe siècle)</li>
-                                    <li>Kitab Al Jabr (Livre du Chiffre), qui donnera aussi son nom au mot Algèbre</li>
-                                    <li>Historiquement, l'algorithmique est lié aux mathématiques</li>
                                     <li>Plus ancien algorithme connu : l'algorithme d'Euclide (300 av. J.-C)</li>
                                 </ul>
                             </li>
                         </ul>
                     </section>
+
+                    <section>
+                        <h3>Exemple : trier des cartes</h3>
+                        <div class="fragment">
+                            <strong>Formulation basique</strong>
+                            <hr>
+                            <ol>
+                                <li>Prendre une carte du tas et regarder sa couleur</li>
+                                <li>S'il y a déjà une pile de cette couleur, placer la carte dans cette pile</li>
+                                <li>Sinon, créer une nouvelle pile avec cette carte</li>
+                                <li>S'il reste une carte en main, retourner à 2</li>
+                            </ol>
+                            <hr>
+                        </div>
+                        <div class="fragment">
+                            <strong>Formulation algorithmique</strong>
+                            <pre><code>POUR CHAQUE carte du tas
+    prendre la carte en main
+
+    POUR CHAQUE pile
+        SI couleur de la carte ÉGAL couleur de la pile ALORS
+            placer la carte dans la pile
+        FIN SI
+    FIN POUR
+
+    SI une carte est en main ALORS
+        placer la carte dans une nouvelle pile
+    FIN Si
+FIN POUR</code></pre>
+                        </div>
+                    </section>
                 </section>
 
                 <section>
                     <section>
-                        <h2>Les variables</h2>
+                        <h2>Comment construire un algorithme</h2>
                     </section>
 
                     <section>
-                        <h3>Affectation de variables</h3>
-                        <strong>Affectation directe</strong>
-                        <pre><code>chaine = "blablabla"
+                        <h3>Les variables</h3>
+                    </section>
+
+                    <section>
+                        <h4>Affectation de variables</h4>
+                        <div class="fragment">
+                            <strong>Affectation directe</strong>
+                            <pre><code>chaine = "blablabla"
 nombre = 15
 flottant = 15.141
 booléen = vrai</code></pre>
-                        <strong>Affectation indirecte</strong>
-                        <pre><code>nombre1 = 23
+                        </div>
+                        <div class="fragment">
+                            <strong>Affectation indirecte</strong>
+                            <pre><code>nombre1 = 23
 nombre2 = nombre1</code></pre>
+                        </div>
                     </section>
 
                     <section>
-                        <h3>Opérations sur les variables</h3>
-
-                        <strong>Opérations arithmétiques</strong>
-                        <pre><code>nombre1 = 5 * 2
+                        <h4>Opérations sur les variables</h4>
+                        <div class="fragment">
+                            <strong>Opérations arithmétiques</strong>
+                            <pre><code>nombre1 = 5 * 2
 nombre2 = 12/3 
 nombre3 = (nombre1 + 10) / nombre2</code></pre>
-                        <strong>Concaténation</strong>
-                        <pre><code>mot1 = "Hello"
+                        </div>
+                        <div class="fragment">
+                            <strong>Concaténation</strong>
+                            <pre><code>mot1 = "Hello"
 mot2 = "World"
 
 phrase = mot1 + " " + mot2</code></pre>
-                    </section>
-                </section>
-
-                <section>
-                    <section>
-                        <h2>Les conditions</h2>
+                        </div>
                     </section>
 
                     <section>
-                        <h3>Structures logiques</h3>
+                        <h3>Les conditions</h3>
+                    </section>
 
-                        <strong>SI</strong>
-                        <pre><code>pluie = vrai
+                    <section>
+                        <h4>Structures logiques</h4>
+                        <div class="fragment">
+                            <strong>SI</strong>
+                            <pre><code>pluie = vrai
 
 SI pluie ALORS
     prendre un parapluie
 FIN SI</code></pre>
-                        <strong>SINON</strong>
-                        <pre><code>pluie = vrai
+                        </div>
+                        <div class="fragment">
+                            <strong>SINON</strong>
+                            <pre><code>pluie = vrai
 
 SI pluie ALORS
     prendre un parapluie
 SINON
     étendre le linge
 FIN SI</code></pre>
-                        <strong>SINON SI</strong>
-                        <pre><code>pluie = faux
+                        </div>
+                        <div class="fragment">
+                            <strong>SINON SI</strong>
+                            <pre><code>pluie = faux
 canicule = vrai
 
 SI pluie ALORS
@@ -185,9 +227,10 @@ FIN SI</code></pre>
                     </section>
 
                     <section>
-                        <h3>Opérateurs logiques</h3>
-                        <strong>Conjonction et disjonction</strong>
-                        <pre><code>neige = vrai
+                        <h4>Opérateurs logiques</h4>
+                        <div class="fragment">
+                            <strong>Conjonction et disjonction</strong>
+                            <pre><code>neige = vrai
 vent = faux
 
 SI vent ET neige ALORS
@@ -195,8 +238,10 @@ SI vent ET neige ALORS
 SINON SI vent OU neige ALORS
     prendre un manteau
 FIN SI</code></pre>
-                        <strong>Égalité, supériorité et infériorité</strong>
-                        <pre><code>x = 1
+                        </div>
+                        <div class="fragment">
+                            <strong>Égalité, différence, supériorité et infériorité</strong>
+                            <pre><code>x = 1
 y = 3
 z = 3
 
@@ -208,40 +253,43 @@ SI y == z ET x > y ALORS
     x = x + z
 FIN SI</code></pre>
                     </section>
-                </section>
 
-                <section>
                     <section>
-                        <h2>Les boucles</h2>
+                        <h3>Les boucles</h3>
                     </section>
 
                     <section>
-                        <strong>TANT QUE</strong>
-                        <pre><code>x = 0
+                        <div class="fragment">
+                            <strong>TANT QUE</strong>
+                            <pre><code>x = 0
 
 TANT QUE x < 10
     x = x + 1
 FIN TANT QUE</code></pre>
-                        <strong>POUR</strong>
-                        <pre><code>x = 1
+                        </div>
+                        <div class="fragment">
+                            <strong>POUR</strong>
+                            <pre><code>x = 1
 
 POUR x DE 1 À 3
     x = x + y
 FIN POUR</code></pre>
                     </section>
-                </section>
 
-                <section>
                     <section>
-                        <h2>Les fonctions</h2>
+                        <h3>Les fonctions</h3>
                     </section>
-                        <section>
+
+                    <section>
+                        <div class="fragment">
                             <strong>Sans argument</strong>
                             <pre><code>FONCTION chiffre()
     RETOURNER 5
 FIN FONCTION
 
 x = chiffre()</code></pre>
+                    </div>
+                        <div class="fragment">
                             <strong>Avec argument</strong>
                             <pre><code>FONCTION doubler(p)
     r = p * 2
