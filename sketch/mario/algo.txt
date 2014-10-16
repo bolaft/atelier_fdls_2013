@@ -1,15 +1,1 @@
-mario court à droite
-<<<<<<< HEAD
-mario saute
-=======
-
-POUR CHAQUE monstre
-	SI monstre.x moins mario.x < 35 ET monstre.x > mario.x ALORS
-		mario saute
-	FIN SI
-FIN POUR
-
-SI la position précédente de mario est égale à la position horizontale de mario ALORS
-	mario saute
-FIN SI
->>>>>>> a8dccfbdb077ec81eb4b6a947195d7da3f3956a5
+demo
