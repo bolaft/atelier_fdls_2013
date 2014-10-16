@@ -30,8 +30,12 @@
 						<h3>Généralités</h3>
 						<ul>
 							<li class="fragment roll-in">Une suite d'instructions pour résoudre un problème donné</li>
-							<li class="fragment roll-in">Entrée -> Algorithme -> Sortie</li>
-							<li class="fragment roll-in">Uniquement des instructions compréhensibles par celui qui l'exécute</li>
+							<li class="fragment roll-in">Similaire une recette de cuisine
+							<a class="image">
+							<img width="750" height="300" src="img/algo.png">
+							</a>
+							</li>
+							<li class="fragment roll-in">Uniquement des instructions compréhensibles par l'exécutant</li>
 							<li class="fragment roll-in">Indépendant du langage de programmation</li>
 							<li class="fragment roll-in">Pas besoin d'être un matheux !</li>
 						</ul>
@@ -65,11 +69,11 @@ SI il y a une tonalité ALORS
 		Retirer ce chiffre de la liste
 	/FIN TANT QUE
 	TANT QUE ça ne sonne pas occupé
-		SI on tombe sur le répondeur ALORS
-			Laisser un message
-		SINON SI le destinataire décroche ALORS
-			Parler
-		/FIN SI
+	    SI on tombe sur le répondeur ALORS
+	    	Laisser un message
+	    SINON SI le destinataire décroche ALORS
+	    	Parler
+	    /FIN SI
 	/FIN TANT QUE
 /FIN SI
 Raccrocher
@@ -128,7 +132,7 @@ helloWorld = mot1 + " " + mot2
 						<pre><code>
 Si booléen Alors
   Instructions
-Finsi
+Fin Si
 						</code></pre>
 						<strong>Sinon</strong>
 						<pre><code>
@@ -136,7 +140,7 @@ Si booléen Alors
   Instructions 1
 Sinon
   Instructions 2
-Finsi
+Fin Si
 						</code></pre>
 						<strong>Sinon Si</strong>
 						<pre><code>
@@ -144,7 +148,7 @@ Si booléen Alors
   Instructions 1
 Sinon Si booléan Alors
   Instructions 2
-Finsi
+Fin Si
 						</code></pre>
 					</section>
 					<section>
@@ -156,7 +160,7 @@ ilVente = true
 
 Si ilVente ET ilPleut
 	resterChezSoi();
-FinSi
+Fin Si
 						</code></pre>
 						<strong>OU (||)</strong>
 						<pre><code>
@@ -167,7 +171,7 @@ Si ilVente ET ilPleut
 	resterChezSoi()
 Sinon Si ilVente OU ilPleut
 	prendreParapluie()
-FinSi
+Fin Si
 						</code></pre>
 					</section>
 				</section>
@@ -180,22 +184,23 @@ FinSi
 						<pre><code>
 entrée = lire()
 
-TantQue lire() != "oui" &amp;&amp; entrée != "non"
+Tant Que lire() != "oui" &amp;&amp; entrée != "non"
   entrée = lire()
-FinTantQue
+Fin Tant Que
 						</code></pre>
 						<strong>Pour</strong>
 						<pre><code>
 Pour x = 1 à 10
   écrire(x)
-FinPour
+Fin Pour
 						</code></pre>
-						<strong>Pour chaque</strong>
+						<strong>Pour Chaque</strong>
 						<pre><code>
-liste = {"objet1", "objet2", "objet3" ...}
-Pour chaque objet x dans liste
-  écrire(x)
-FinPour
+liste = {12, 43, 5, 7, 10 ...}
+
+Pour Chaque objet x dans liste
+  doubler(x)
+Fin Pour Chaque
 						</code></pre>
 					</section>
 				</section>
