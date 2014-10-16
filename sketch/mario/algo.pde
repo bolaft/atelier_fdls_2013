@@ -39,7 +39,7 @@ void choixAction(mario, monstres, nombreDeMonstres)
 			choixActionSuccess(mario, monstres, nombreDeMonstres);
 			break;
 		}
-		
+
 		code += interpret(lines[i].toLowerCase()) + "\n";
 	}
 
@@ -99,6 +99,7 @@ String interpret(s)
 	s = s.replace("fin pour", "i++; }");
 
 	s = s.replace("le x de mario", "mario.x");
+	s = s.replace("la position de mario", "mario.x");
 	s = s.replace("la position horizontale de mario", "mario.x");
 	s = s.replace("le y de mario", "mario.y");
 	s = s.replace("la position verticale de mario", "mario.y");
@@ -109,10 +110,12 @@ String interpret(s)
 	s = s.replace("la position verticale du monstre", "monstre.y");
 
 	s = s.replace("le x précédent de mario", "mario.precedent.x");
+	s = s.replace("la position précédente de mario", "mario.precedent.x");
 	s = s.replace("la position horizontale précédente de mario", "mario.precedent.x");
 	s = s.replace("le y précédent de mario", "mario.precedent.y");
 	s = s.replace("la position verticale précédente de mario", "mario.precedent.y");
 	s = s.replace("le x précédent du monstre", "monstre.precedent.x");
+	s = s.replace("la position précédente du monstre", "monstre.precedent.x");
 	s = s.replace("la position horizontale précédente du monstre", "monstre.precedent.x");
 	s = s.replace("le y précédent du monstre", "monstre.precedent.y");
 	s = s.replace("la position verticale précédente du monstre", "monstre.precedent.y");
