@@ -57,7 +57,7 @@ String interpret(s)
 	s = s.replace("mario court à droite", "mario.courirDroite();");
 	s = s.replace("mario court à gauche", "mario.courirGauche();");
 	s = s.replace("mario saute", "mario.sauter();");
-	s = s.replace("mario se baisse", "mario.seBaisser();");
+	s = s.replace("mario se baisse", "mario.seBaisser(); mario.courirDroite();");
 
 	s = s.replace("mario a la clef", "mario.aLaClef");
 	s = s.replace("mario n'a pas la clef", "mario.aLaClef == false");
