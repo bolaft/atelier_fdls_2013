@@ -42,9 +42,9 @@
                     <section>
                         <h3>Au programme :</h3>
                         <ul>
-                            <li>Qu'est ce qu'un algorithme ? (5 minutes)</li>
-                            <li>Comment construire un algorithme (5-10 minutes)</li>
-                            <li>Imaginer un algorithme pour contrôler Mario (25-30 minutes)</li>
+                            <li>Qu'est ce qu'un algorithme ? (~5 minutes)</li>
+                            <li>Les bases pour construire un algorithme (~5 minutes)</li>
+                            <li>À vous de jouer : contrôlez Mario dans 5 niveaux (~30 minutes)</li>
                         </ul>
                     </section>
                 </section>
@@ -107,12 +107,19 @@
                                 </ul>
                             </li>
                             <hr>
-                            <li class="fragment">Historique :
+                            <div class="fragment">
+                            <div style="float:left; width:50%">
+                            <li>Historique :
                                 <ul>
-                                    <li>Forme latine (Algorismus) du nom du mathématicien Al Khwarizmi (VIIIe siècle)</li>
+                                    <li>Forme latine (Algorismus) du nom du mathématicien Al Khwarizmi <br>(VIIIe siècle)</li>
                                     <li>Plus ancien algorithme connu : l'algorithme d'Euclide (300 av. J.-C)</li>
                                 </ul>
                             </li>
+                            </div>
+                            <div style="float:left; width:50%">
+                                <img src="img/numbers.jpg">
+                            </div>
+                            </div>
                         </ul>
                     </section>
 
@@ -126,7 +133,13 @@
 
                     <section>
                         <h3>Exemple : trier des cartes</h3>
-                        <div class="fragment">
+                        <ul>
+                            <li>Données d'entrée : les cartes</li>
+                            <li>Résultat attendu : piles de cartes triées par couleur</li>
+                        </ul>
+                        <br>
+                        <br>
+                        <div>
                             <strong>Formulation basique</strong>
                             <hr>
                             <ol>
@@ -137,7 +150,16 @@
                             </ol>
                             <hr>
                         </div>
-                        <div class="fragment">
+                    </section>
+                    <section>
+                        <h3>Exemple : trier des cartes</h3>
+                        <ul>
+                            <li>Données d'entrée : les cartes</li>
+                            <li>Résultat attendu : piles de cartes triées par couleur</li>
+                        </ul>
+                        <br>
+                        <br>
+                        <div>
                             <strong>Formulation algorithmique</strong>
                             <pre><code>POUR CHAQUE carte du tas
     prendre la carte en main
@@ -166,13 +188,53 @@ FIN POUR</code></pre>
                     </section>
 
                     <section>
+                        <h4>Types de variables</h4>
+                        <div class="fragment">
+                            <strong>Types simples</strong>
+                            <br>
+                            <ul>
+                                <li class="fragment">Chaîne de caractères<br>
+                                <pre><code>"Fête de la science", "fdls_@!ấå€", "2015"</code></pre></li>
+                                <li class="fragment">Nombre entier<br>
+                                <pre><code>1, 2, 3, 10000</code></pre></li>
+                                <li class="fragment">Nombre décimal (flottant)<br>
+                                <pre><code>3.14, 9.81, 0.000002</code></pre></li>
+                                <li class="fragment">Booléen<br>
+                                <pre><code>VRAI ou FAUX,    0 ou 1</code></pre></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>Types de variables</h4>
+                        <div class="fragment">
+                            <strong>Types complexes</strong>
+                            <br>
+                            <ul>
+                                <li class="fragment">Liste<br>
+                                <pre><code>[2, 2, 1, 3, 10, 1, 7, 10]</code></pre></li>
+                                <li class="fragment">Liste ordonnée<br>
+                                <pre><code>[1, 1, 2, 2, 3, 7, 10, 10]</code></pre></li>
+                                <li class="fragment">Ensemble<br>
+                                <pre><code>{1, 2, 3, 7, 10}</code></pre></li>
+                                <li class="fragment">Ce que vous voulez !<br>
+                                <pre><code>{
+ 10
+ [1, 2, 3]
+ {"x", "y", "z"}
+}</code></pre></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
                         <h4>Affectation de variables</h4>
                         <div class="fragment">
                             <strong>Affectation directe</strong>
-                            <pre><code>chaine = "blablabla"
-nombre = 15
+                            <pre><code>chaîne   = "blablabla"
+nombre   = 15
 flottant = 15.141
-booléen = vrai</code></pre>
+booléen  = vrai</code></pre>
                         </div>
                         <div class="fragment">
                             <strong>Affectation indirecte</strong>
@@ -197,6 +259,21 @@ mot2 = "World"
 phrase = mot1 + " " + mot2</code></pre>
                         </div>
                     </section>
+
+                    <section>
+                        <h2>
+                            Mario - Level 1
+
+                        </h2>
+
+                        <img src="img/too_easy.gif">
+
+                        <p>
+                            On commence facile ...
+                        </p>
+                    </section>
+
+
 
                     <section>
                         <h3>Les conditions</h3>
@@ -224,7 +301,7 @@ FIN SI</code></pre>
                         </div>
                         <div class="fragment">
                             <strong>SINON SI</strong>
-                            <pre><code>pluie = faux
+                            <pre><code>pluie    = faux
 canicule = vrai
 
 SI pluie ALORS
@@ -239,7 +316,7 @@ FIN SI</code></pre>
                         <div class="fragment">
                             <strong>Conjonction et disjonction</strong>
                             <pre><code>neige = vrai
-vent = faux
+vent  = faux
 
 SI vent ET neige ALORS
     rester chez soi
@@ -261,6 +338,18 @@ SI y == z ET x > y ALORS
     x = x + z
 FIN SI</code></pre>
                     </section>
+
+
+                    <section>
+                        <h2>
+                            Mario - Level 2
+
+                        </h2>
+
+                        <img src="img/challenge-accepted.gif">
+
+                    </section>
+
 
                     <section>
                         <h3>Les boucles</h3>
@@ -294,6 +383,26 @@ FIN POUR CHAQUE</code></pre>
                     </section>
 
                     <section>
+                        <h2>
+                            Mario - Level 3
+
+                        </h2>
+
+                        <img src="img/dizzy.gif">
+
+                    </section>
+
+                    <section>
+                        <h2>
+                            Mario - Level 4
+
+                        </h2>
+
+                        <img src="img/concentrate-real.gif">
+
+                    </section>
+
+                    <section>
                         <h3>Les fonctions</h3>
                     </section>
 
@@ -315,6 +424,17 @@ FIN FONCTION
 
 x = doubler(12)</code></pre>
                     </section>
+
+                    <section>
+                        <h2>
+                            Mario - Level 5
+
+                        </h2>
+
+                        <img src="img/mindblown.gif">
+
+                    </section>
+
                 </section>
 
                 <section>
