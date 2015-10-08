@@ -64,6 +64,11 @@ String interpret(s)
 	s = s.replace("mario peut traverser", "mario.peutTraverser");
 	s = s.replace("mario ne peut pas traverser", "mario.peutTraverser == false");
 
+	s = s.replace("devient vraie", "= true");
+	s = s.replace("devient vrai", "= true");
+	s = s.replace("devient faux", "= false");
+	s = s.replace("devient fausse", "= false");
+
 	s = s.replace("est vraie", "== true");
 	s = s.replace("est vrai", "== true");
 	s = s.replace("est faux", "== false");

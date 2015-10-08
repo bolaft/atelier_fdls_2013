@@ -1,7 +1,7 @@
 void setup() {
   size(640, 360);
   stroke(255);
-  frameRate(50);
+  frameRate(24);
   background(0);
 
   try {

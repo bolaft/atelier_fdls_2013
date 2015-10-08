@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Fête de la Science - 2014</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reveal.min.css">
+        <link rel="stylesheet" href="css/theme/beige.css" id="theme">
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+        <link rel="stylesheet" href="css/cv.css">
+        <!--[if lt IE 9]>
+            <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+        <script type="text/javascript" src="js/editor.js"></script>
+
+        <style type="text/css">
+            li {
+                font-size: 90% !important;
+            }
+
+            li > ul > li {
+                font-size: 80% !important;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
+
+                    <section>
+                        <img src="img/mario.png" alt="mario" width="250px" style="box-shadow: 0 0 0px">
+                        <h1>Un algo pour Mario</h1>
+                        <h3>Contrôler Mario avec un algorithme (simple) d'intelligence artificielle</h3>
+                    </section>
+                </section>
+
+                <section>
+
+                    <section>
+                        <canvas 
+                                id="mario"
+                                data-processing-sources=" sketch/mario/preloads.pde
+                                                          sketch/mario/codebase.pde
+                                                          sketch/mario/mario.pde
+                                                          sketch/mario/algo.pde
+
+                                                          sketch/mario/level/mariolevel.pde
+                                                          sketch/mario/level/levels_mainlevel.pde
+
+                                                          sketch/mario/layer/mariolayer.pde
+                                                          sketch/mario/layer/layers_background.pde
+                                                          sketch/mario/layer/layers_mainlayer1.pde
+
+                                                          sketch/mario/actor/hero.pde
+
+                                                          sketch/mario/actor/enemy/enemy.pde
+                                                          sketch/mario/actor/enemy/enemy_banzaibill.pde
+                                                          sketch/mario/actor/enemy/enemy_bonustarget.pde
+                                                          sketch/mario/actor/enemy/enemy_koopa.pde
+                                                          sketch/mario/actor/enemy/enemy_muncher.pde
+
+                                                          sketch/mario/specials/specials_block.pde
+                                                          sketch/mario/specials/specials_keys.pde
+                                                          sketch/mario/specials/specials_tubes.pde
+                                                          sketch/mario/specials/pickups.pde
+                                                          sketch/mario/specials/triggers.pde"
+                                tabindex="1">
+                        </canvas>
+                        <hr>
+                        <small>
+                        <ul>
+                            <li>Informations (variables) connues :</li>
+                        </ul>
+                        <ul style="text-align: right">
+                            <li>Actions (fonctions) possibles :
+                                <ul>
+                                    <li>courir à droite</li>
+                                    <li>courir à gauche</li>
+                                    <li>sauter</li>
+                                    <li>se baisser</li>
+                                </ul>
+                            </li>
+                        </ul>
+                        </small>
+                    </section>
+                  </section>
+            </div>
+
+        <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+        <script type="text/javascript" src="js/processing.js"></script>
+        <script type="text/javascript" src="js/processing-lazyload.js"></script>
+        <script type="text/javascript" src="js/minim.js"></script>
+        <script type="text/javascript" src="js/syntaxHighlight.js"></script>
+        <script type="text/javascript" src="js/canvasFocus.js"></script>
+            <script src="lib/js/head.min.js"></script>
+            <script src="js/reveal.min.js"></script>
+            <script>
+                Reveal.initialize({
+                    controls: true,
+                    progress: true,
+                    history: true,
+                    center: true,
+                    rollingLinks: false,
+
+                    theme: Reveal.getQueryHash().theme,
+                    transition: Reveal.getQueryHash().transition || 'linear',
+                    dependencies: [{
+                        src: 'lib/js/classList.js',
+                        condition: function() {
+                            return !document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/markdown/showdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }, {
+                        src: 'plugin/markdown/markdown.js',
+                        condition: function() {
+                            return !!document.querySelector('[data-markdown]');
+                        }
+                    }/*, {
+                        src: 'plugin/highlight/highlight.js',
+                        async: true,
+                        callback: function() {
+                            hljs.initHighlightingOnLoad();
+                        }
+                    }*/, {
+                        src: 'plugin/zoom-js/zoom.js',
+                        async: true,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }, {
+                        src: 'plugin/notes/notes.js',
+                        async: true,
+                        condition: function() {
+                            return !!document.body.classList;
+                        }
+                    }
+                    ]
+                });
+            </script>
+    </body>
+</html>
