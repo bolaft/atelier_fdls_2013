@@ -1,5 +1,0 @@
-si mario a la clef alors
-	mario court à gauche
-sinon
-	mario court à droite
-fin si

@@ -15,7 +15,7 @@ class MainLevelLayer extends MarioLayer {
     addBoundary(new Boundary(-1,0, -1,height));
     addBoundary(new Boundary(width+1,height, width+1,0));
 
-//    addGround("ground", -32,height-48, width + 32,height);
+    // addGround("ground", -32,height-48, width + 32,height);
 
     // add general ground, with a muncher pit
     float gap = 58;
@@ -25,7 +25,6 @@ class MainLevelLayer extends MarioLayer {
     //gap += 2;
     /*addBoundary(new Boundary(-31 + gap*32,height,-31 + gap*32,height-47));*/
     addGround("ground", -32 + gap*32,height-48, width+32,height);
-
 
     addGoal(2000,height-48);
     // add decorative foreground bushes
@@ -91,6 +90,8 @@ class MainLevelLayer extends MarioLayer {
     // tube transport
     addTube(660,height-48, null);
     addTube(804,height-48, null);
+    addTube(1500,height-48, null);
+    addTube(1800,height-48, null);
 
     // placed on sky blocks
     //addTube(width-8-23.5*16,88,  new LevelTeleportTrigger("Dark Level",  2020+6,height-65,16,1,  16, height-32));

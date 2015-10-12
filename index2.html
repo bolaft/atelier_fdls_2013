@@ -36,6 +36,85 @@
                 <section>
 
                     <section>
+                        <h2>
+                            Mario - Level 1
+
+                        </h2>
+
+                        <img src="img/too_easy.gif" width="70%">
+
+                        <p>
+                            On commence facile ...
+                        </p>
+                    </section>
+
+
+
+                    <section>
+                        <h3>Les conditions</h3>
+                    </section>
+
+                    <section>
+                        <h4>Structures logiques</h4>
+                        <div class="fragment">
+                            <strong>SI</strong>
+                            <pre><code>pluie = vrai
+
+SI pluie ALORS
+    prendre un parapluie
+FIN SI</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>SINON</strong>
+                            <pre><code>pluie = vrai
+
+SI pluie ALORS
+    prendre un parapluie
+SINON
+    étendre le linge
+FIN SI</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>SINON SI</strong>
+                            <pre><code>pluie    = faux
+canicule = vrai
+
+SI pluie ALORS
+    prendre un parapluie
+SINON SI canicule ALORS
+    prendre un parasol
+FIN SI</code></pre>
+                    </section>
+
+                    <section>
+                        <h4>Opérateurs logiques</h4>
+                        <div class="fragment">
+                            <strong>Conjonction et disjonction</strong>
+                            <pre><code>neige = vrai
+vent  = faux
+
+SI vent ET neige ALORS
+    rester chez soi
+SINON SI vent OU neige ALORS
+    prendre un manteau
+FIN SI</code></pre>
+                        </div>
+                        <div class="fragment">
+                            <strong>Égalité, différence, supériorité et infériorité</strong>
+                            <pre><code>x = 1
+y = 3
+z = 3
+
+SI x <= y ALORS
+    x = 4
+FIN SI
+
+SI y == z ET x > y ALORS
+    x = x + z
+FIN SI</code></pre>
+                    </section>
+
+                    <section>
                         <canvas 
                                 id="mario"
                                 data-processing-sources=" sketch/mario/preloads.pde
