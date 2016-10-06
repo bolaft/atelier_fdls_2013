@@ -44,7 +44,7 @@
                         <ul>
                             <li>Qu'est ce qu'un algorithme ? (~5 minutes)</li>
                             <li>Les bases pour construire un algorithme (~5 minutes)</li>
-                            <li>À vous de jouer : contrôlez Mario dans 5 niveaux (~30 minutes)</li>
+                            <li>À vous de jouer : contrôlez Mario avec un algorithme ! (~30 minutes)</li>
                         </ul>
                     </section>
                 </section>
@@ -189,7 +189,7 @@ FIN POUR</code></pre>
                                 <li class="fragment">Les variables</li>
                                 <li class="fragment">Les conditions</li>
                                 <li class="fragment">Les boucles</li>
-                                <li class="fragment">Les fonctions</li>
+                                <!-- <li class="fragment">Les fonctions</li> -->
                             </ul>
                             </p>
                         </div>
@@ -264,7 +264,7 @@ FIN POUR</code></pre>
                             </div>
 
                             <div class="fragment">
-                            <p>Booléen</p>
+                            <p>Booléens</p>
                             <pre><code>VRAI ou FAUX  /  1 ou 0</code></pre>
                             </div>
                         </div>
@@ -291,18 +291,18 @@ FIN POUR</code></pre>
                             <pre><code>{1, 2, 3, 7, 10}</code></pre>
                             </div>
 
-                            <div class="fragment">
+                            <!-- <div class="fragment">
                             <p>Ce que vous voulez !</p>
                             <pre><code>{
  10
  [1, 2, 3]
  {"x", "y", "z"}
 }</code></pre>
-                            </div>
+                            </div> -->
                         </div>
                     </section>
 
-                    <section>
+                    <!-- <section>
                         <h4>Affectation de variables</h4>
                         <div class="fragment">
                             <strong>Affectation directe</strong>
@@ -333,7 +333,7 @@ mot2 = "World"
 
 phrase = mot1 + " " + mot2</code></pre>
                         </div>
-                    </section>
+                    </section> -->
 
 
 
@@ -376,7 +376,7 @@ FIN SI</code></pre>
                     <section>
                         <h4>Opérateurs logiques</h4>
                         <div class="fragment">
-                            <strong>Conjonction et disjonction</strong>
+                            <strong>Conjonction ("ET") et disjonction ("OU")</strong>
                             <pre><code>neige = vrai
 vent  = faux
 
@@ -388,16 +388,16 @@ FIN SI</code></pre>
                         </div>
                         <div class="fragment">
                             <strong>Égalité, différence, supériorité et infériorité</strong>
-                            <pre><code>x = 1
-y = 3
-z = 3
+                            <pre><code>nombre = ?
+x = 10
+y = 100
 
-SI x <= y ALORS
-    x = 4
+SI nombre >= x ALORS
+    AFFICHER "Le nombre est supérieur ou égal à 10"
 FIN SI
 
-SI y == z ET x > y ALORS
-    x = x + z
+SI nombre < y ALORS
+    AFFICHER "Le nombre est strictement plus petit que 100"
 FIN SI</code></pre>
                     </section>
 
@@ -424,18 +424,18 @@ POUR x DE 1 À 3
     x = x + y
 FIN POUR</code></pre>
 					</div>
-					<div class="fragment">
+					<!-- <div class="fragment">
                             <strong>POUR CHAQUE</strong>
                             <pre><code>liste = {12, 23, 5, 34, 10 ...}
 
 POUR CHAQUE x DE liste
     x = x * 2
 FIN POUR CHAQUE</code></pre>
-					</div>
+					</div> -->
                     </section>
 
 
-                    <section>
+                    <!-- <section>
                         <h3>Les fonctions</h3>
                     </section>
 
@@ -456,7 +456,7 @@ x = chiffre()</code></pre>
 FIN FONCTION
 
 x = doubler(12)</code></pre>
-                    </section>
+                    </section> -->
 
 
                 </section>
@@ -580,13 +580,13 @@ x = doubler(12)</code></pre>
                         }
                     }*/, {
                         src: 'plugin/zoom-js/zoom.js',
-                        async: true,
+                        async: false,
                         condition: function() {
                             return !!document.body.classList;
                         }
                     }, {
                         src: 'plugin/notes/notes.js',
-                        async: true,
+                        async: false,
                         condition: function() {
                             return !!document.body.classList;
                         }
