@@ -6,7 +6,7 @@ Le code source doit être cloné dans un serveur web (testé avec Apache 2). Pou
 
 ### Bugs connus
 
-Avec Mozilla Firefox des bugs d'affichage (flickering) peuvent se produrie, si c'est le cas réessayer avec Chrome ou Chromium.
+Avec Mozilla Firefox des bugs d'affichage (flickering) peuvent se produire, si c'est le cas réessayer avec Chrome ou Chromium.
 
 ### Ressources
 
