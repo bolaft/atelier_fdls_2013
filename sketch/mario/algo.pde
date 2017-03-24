@@ -15,7 +15,7 @@
  *    mario.seBaisser() 		Mario se baisse (permet aussi de traverser les conduits)
  */
 
-variable = false;
+arrierePlan = false;
 variable1 = false;
 variable2 = false;
 variable3 = null;

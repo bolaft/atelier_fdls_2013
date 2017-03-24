@@ -49,46 +49,6 @@
                     </section>
                 </section>
 
-                    <!-- <section>
-                        <h2>Exemple</h2>
-                        <canvas id="mario_canvas_first"
-                                width="800"
-                                height="432"
-                                data-processing-sources=" sketch/mario/preloads.pde
-                                                          sketch/mario/codebase.pde
-                                                          sketch/mario/mario.pde
-                                                          sketch/mario/algo_success.pde
-
-                                                          sketch/mario/level/mariolevel.pde
-                                                          sketch/mario/level/levels_bonuslevel.pde
-                                                          sketch/mario/level/levels_darklevel.pde
-                                                          sketch/mario/level/levels_mainlevel.pde
-
-                                                          sketch/mario/layer/mariolayer.pde
-                                                          sketch/mario/layer/layers_background.pde
-                                                          sketch/mario/layer/layers_bonuslayer.pde
-                                                          sketch/mario/layer/layers_bonuslayer_bg.pde
-                                                          sketch/mario/layer/layers_colorlayer.pde
-                                                          sketch/mario/layer/layers_darklevellayer.pde
-                                                          sketch/mario/layer/layers_mainlayer.pde
-
-                                                          sketch/mario/actor/hero.pde
-
-                                                          sketch/mario/actor/enemy/enemy.pde
-                                                          sketch/mario/actor/enemy/enemy_banzaibill.pde
-                                                          sketch/mario/actor/enemy/enemy_bonustarget.pde
-                                                          sketch/mario/actor/enemy/enemy_koopa.pde
-                                                          sketch/mario/actor/enemy/enemy_muncher.pde
-
-                                                          sketch/mario/specials/specials_block.pde
-                                                          sketch/mario/specials/specials_keys.pde
-                                                          sketch/mario/specials/specials_tubes.pde
-                                                          sketch/mario/specials/pickups.pde
-                                                          sketch/mario/specials/triggers.pde"
-                                tabindex="2">
-                        </canvas>
-                    </section> -->
-
                 <section>
 
                     <section>
@@ -130,52 +90,7 @@
                             <img src="img/algo.png">
                         </ul>
                     </section>
-
-                    <section>
-                        <h3>Exemple : trier des cartes</h3>
-                        <ul>
-                            <li>Données d'entrée : les cartes</li>
-                            <li>Résultat attendu : piles de cartes triées par couleur</li>
-                        </ul>
-                        <br>
-                        <br>
-                        <div>
-                            <strong>Formulation basique</strong>
-                            <hr>
-                            <ol>
-                                <li>Prendre une carte du tas et regarder sa couleur</li>
-                                <li>S'il y a déjà une pile de cette couleur, placer la carte dans cette pile</li>
-                                <li>Sinon, créer une nouvelle pile avec cette carte</li>
-                                <li>S'il reste une carte en main, retourner à 2</li>
-                            </ol>
-                            <hr>
-                        </div>
-                    </section>
-                    <section>
-                        <h3>Exemple : trier des cartes</h3>
-                        <ul>
-                            <li>Données d'entrée : les cartes</li>
-                            <li>Résultat attendu : piles de cartes triées par couleur</li>
-                        </ul>
-                        <br>
-                        <br>
-                        <div>
-                            <strong>Formulation algorithmique</strong>
-                            <pre><code>POUR CHAQUE carte du tas
-    prendre la carte en main
-
-    POUR CHAQUE pile
-        SI couleur de la carte ÉGAL couleur de la pile ALORS
-            placer la carte dans la pile
-        FIN SI
-    FIN POUR
-
-    SI une carte est en main ALORS
-        placer la carte dans une nouvelle pile
-    FIN Si
-FIN POUR</code></pre>
-                        </div>
-                    </section>
+                   
                 </section>
 
                 <section>
@@ -248,25 +163,22 @@ FIN POUR</code></pre>
                             <strong>Types simples</strong>
                             <br>
                             <br>
-                            <div class="fragment">
-                            <p>Chaînes de caractères</p>
-                            <pre><code>"Fête de la science", "fdls_@!ấå€", "2016"</code></pre>
-                            </div>
 
                             <div class="fragment">
                             <p>Nombres entiers</p>
                             <pre><code>1, 2, 3, 100000</code></pre>
                             </div>
-
-                            <div class="fragment">
-                            <p>Nombres décimaux (flottants)</p>
-                            <pre><code>3.14, 2.5, 0.000002</code></pre>
-                            </div>
-
+                            
                             <div class="fragment">
                             <p>Booléens</p>
                             <pre><code>VRAI ou FAUX  /  1 ou 0</code></pre>
                             </div>
+
+                            <div class="fragment">
+                            <p>Et d'autres : décimaux, chaînes de caractères...</p>
+                            <pre><code>3.14, 2.5, 0.000002</code></pre>
+                            </div>
+
                         </div>
                     </section>
 
@@ -282,13 +194,7 @@ FIN POUR</code></pre>
                             </div>
 
                             <div class="fragment">
-                            <p>Listes ordonnées</p>
-                            <pre><code>[1, 1, 2, 2, 3, 7, 10, 10]</code></pre>
-                            </div>
-
-                            <div class="fragment">
-                            <p>Ensembles</p>
-                            <pre><code>{1, 2, 3, 7, 10}</code></pre>
+                            <p>Et d'autres : listes ordonnées, ensembles, objets...</p>
                             </div>
 
                             <!-- <div class="fragment">
@@ -302,11 +208,11 @@ FIN POUR</code></pre>
                         </div>
                     </section>
 
-                    <!-- <section>
+                    <section>
                         <h4>Affectation de variables</h4>
                         <div class="fragment">
                             <strong>Affectation directe</strong>
-                            <pre><code>chaîne   = "blablabla"
+                            <pre><code>chaîne  = "blablabla"
 nombre   = 15
 flottant = 15.141
 booléen  = vrai</code></pre>
@@ -318,7 +224,7 @@ nombre2 = nombre1</code></pre>
                         </div>
                     </section>
 
-                    <section>
+                    <!-- <section>
                         <h4>Opérations sur les variables</h4>
                         <div class="fragment">
                             <strong>Opérations arithmétiques</strong>
@@ -342,7 +248,7 @@ phrase = mot1 + " " + mot2</code></pre>
                     </section>
 
                     <section>
-                        <h4>Structures logiques</h4>
+                        <!-- <h4>Structures logiques</h4> -->
                         <div class="fragment">
                             <strong>SI</strong>
                             <pre><code>pluie = vrai
@@ -408,7 +314,7 @@ FIN SI</code></pre>
                     </section>
 
                     <section>
-                        <div class="fragment">
+                        <!-- <div class="fragment">
                             <strong>TANT QUE</strong>
                             <pre><code>x = 0
 
@@ -423,15 +329,19 @@ FIN TANT QUE</code></pre>
 POUR x DE 1 À 3
     x = x + y
 FIN POUR</code></pre>
-					</div>
-					<!-- <div class="fragment">
-                            <strong>POUR CHAQUE</strong>
-                            <pre><code>liste = {12, 23, 5, 34, 10 ...}
-
-POUR CHAQUE x DE liste
-    x = x * 2
-FIN POUR CHAQUE</code></pre>
 					</div> -->
+					<div class="fragment">
+                            <strong>POUR CHAQUE</strong>
+                            <pre><code>liste = [10, 2, 3]
+valeur = 1
+POUR CHAQUE nombre DE liste
+    valeur = valeur * nombre
+FIN POUR CHAQUE</code></pre>
+					</div>
+
+                    <div class="fragment">
+                            <strong>Et d'autres : POUR, TANT QUE...</strong>
+                    </div>
                     </section>
 
 
@@ -463,7 +373,6 @@ x = doubler(12)</code></pre>
 
                 <section>
                     <section>
-                        <h2>Mario</h2>
                         <canvas id="mario_canvas"
                                 width="800"
                                 height="432"
@@ -501,6 +410,7 @@ x = doubler(12)</code></pre>
                                 tabindex="1">
                         </canvas>
                         <small>
+                        <div style="float:left">
                         <ul>
                             <li>Informations (variables) connues :
                                 <ul>
@@ -512,6 +422,7 @@ x = doubler(12)</code></pre>
                                 </ul>
                             </li>
                         </ul>
+                    </div>
                         <ul style="text-align: right">
                             <li>Actions (fonctions) possibles :
                                 <ul>

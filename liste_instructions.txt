@@ -13,8 +13,8 @@ PROPRIÉTÉS :
 
 mario a la clef 				mario.aLaClef
 mario n'a pas la clef 			mario.aLaClef == false
-mario peut traverser 			mario.peutTraverser == false
-mario ne peut pas traverser 	mario.peutTraverser
+mario peut traverser 			mario.peutTraverser
+mario ne peut pas traverser 	mario.peutTraverser == false
 
 le x de mario 					mario.x
 le y de mario 					mario.y

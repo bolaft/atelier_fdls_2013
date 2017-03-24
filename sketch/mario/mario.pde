@@ -33,4 +33,3 @@ void reset() {
   if(javascript != null) { javascript.reset(); }
   setActiveScreen("Main Level");
 }
-
