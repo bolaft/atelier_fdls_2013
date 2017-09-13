@@ -43,7 +43,7 @@ class Coin extends MarioPickup {
  */
 class DragonCoin extends MarioPickup {
   DragonCoin(float x, float y) {
-    super("Dragon coin", "graphics/assorted/Dragon-coin.gif", 1, 10, x, y, true);
+    /*super("Dragon coin", "graphics/assorted/Dragon-coin.gif", 1, 10, x, y, true);*/
     SoundManager.load(this, "audio/Dragon coin.mp3");
   }
   void pickedUp() { 

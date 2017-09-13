@@ -11,7 +11,7 @@ class MainBackgroundLayer extends MarioLayer {
 
     addBoundary(new Boundary(-1,0, -1,height));
     addBoundary(new Boundary(width+1,height, width+1,0));
-    addGround("ground", 0,height-100, width,height-100+16);
+    addGround("ground", 0,height-150, width,height-100+16);
 
     /*
     for (int x=0; x<width+1; x+=width/25) {
@@ -24,9 +24,9 @@ class MainBackgroundLayer extends MarioLayer {
     
     addTube(304,height-100,null);
     int pos = 1914;
-    addTube(pos,height-100,new LayerTeleportTrigger("main layer", 2020+8,40));
+    addTube(pos,height-150,new LayerTeleportTrigger("main layer", 2020+8,40));
     
-    addGoal(2060,height-100);
+    addGoal(2060,height-150);
   }
 
   void draw() {

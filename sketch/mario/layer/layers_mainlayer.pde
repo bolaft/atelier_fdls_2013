@@ -37,13 +37,13 @@ class MainLevelLayer extends MarioLayer {
 
     // add some ground platforms    
     addGroundPlatform("ground", 928, height-224, 96, 112);
-    addCoins(928,height-236,96);
+    /*addCoins(928,height-236,96);*/
     addGroundPlatform("ground", 920, height-176, 32, 64);
     addGroundPlatform("ground", 912, height-128, 128, 80);
-    addCoins(912,height-140,128);
+    /*addCoins(912,height-140,128);*/
     addGroundPlatform("ground", 976, height-96, 128, 48);
     addGroundPlatform("ground", 1442, height-128, 128, 80);
-    addCoins(1442,height-140,128);
+    /*addCoins(1442,height-140,128);*/
     addGroundPlatform("ground", 1442+64, height-96, 128, 48);
 
     for(int i=0; i<7; i++) {
@@ -54,7 +54,7 @@ class MainLevelLayer extends MarioLayer {
     addForPlayerOnly(new DragonCoin(352,height-164));
 
     // Let's also add a koopa on one of the slides
-    Koopa koopa = new Koopa(264, height-178);
+    Koopa koopa = new Koopa(264, height-148);
     addInteractor(koopa);
 
     // add lots of just-in-time triggers
@@ -64,9 +64,9 @@ class MainLevelLayer extends MarioLayer {
     addTubes();
 
     // layer of skyblocks
-    for(int i=0; i<24; i++) {
+    /*for(int i=0; i<24; i++) {
       addBoundedInteractor(new SkyBlock(width-23.5*16+i*16,96));
-    }
+    }*/
 
     // key!
     addForPlayerOnly(new KeyPickup(2000,364));
@@ -92,7 +92,7 @@ class MainLevelLayer extends MarioLayer {
     addTube(804,height-48, null);
 
     // placed on sky blocks
-    addTube(width-8-23.5*16,88,  new LevelTeleportTrigger("Dark Level",  2020+6,height-65,16,1,  16, height-32));
-    addUpsideDownTube(2020,0);
+    /*addTube(width-8-23.5*16,88,  new LevelTeleportTrigger("Dark Level",  2020+6,height-65,16,1,  16, height-32));
+    addUpsideDownTube(2020,0);*/
   }
 }

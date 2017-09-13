@@ -17,14 +17,14 @@ abstract class MarioBlock extends BoundedInteractor {
   }
 
   void setupStates() {
-    State hanging = new State("hanging", "graphics/assorted/Coin-block.gif", 1, 4);
+   /* State hanging = new State("hanging", "graphics/assorted/Coin-block.gif", 1, 4);
     hanging.setAnimationSpeed(0.2);
     addState(hanging);
 
     State exhausted = new State("exhausted", "graphics/assorted/Coin-block-exhausted.gif");
     addState(exhausted);
 
-    setCurrentState("hanging");
+    setCurrentState("hanging");*/
   }
 
   void setupBoundaries() {

@@ -52,6 +52,8 @@ String interpret(s)
 {
 	/*HashMap<String,String> t = new HashMap<String,String>();*/
 
+	s = s.replace("nemo", "mario")
+
 	s = s.replace(" au ", " à le ");
 
 	s = s.replace("mario court à droite", "mario.courirDroite();");

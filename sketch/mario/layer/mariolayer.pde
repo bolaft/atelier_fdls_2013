@@ -132,10 +132,10 @@ class MarioLayer extends LevelLayer {
 
   // add coins over a horizontal stretch  
   void addCoins(float x, float y, float w) {
-    float step = 16, i = 0, last = w/step;
+    float st/*ep = 16, i = 0, last = w/step;
     for(i=0; i<last; i++) {
       addForPlayerOnly(new Coin(x+8+i*step,y));
-    }
+    }*/
   }
 
   // And finally, the end of the level!
@@ -149,8 +149,8 @@ class MarioLayer extends LevelLayer {
     // foreground post
     Sprite goal_f = new Sprite("graphics/assorted/Goal-front.gif");
     goal_f.align(CENTER, BOTTOM);
-    goal_f.setPosition(xpos+32, hpos);
-    addForegroundSprite(goal_f);
+    goal_f.setPosition(xpos, hpos);
+    addBackgroundSprite(goal_f);
     // the finish line rope
     addForPlayerOnly(new Rope(xpos, hpos-16));
   }

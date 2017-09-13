@@ -8,11 +8,11 @@ fin si
 
 pour chaque monstre
 	si variable2 est vraie alors
-		si monstre.x moins mario.x < 35 et monstre.x > mario.x alors
+		si monstre.x moins mario.x < 30 et monstre.x > mario.x alors
 			mario saute
 		fin si
 	sinon
-		si monstre.x moins mario.x > -35 et monstre.x - mario.x < 0 alors
+		si monstre.x moins mario.x > -30 et monstre.x - mario.x < 0 alors
 			mario saute
 		fin si
 	fin si
